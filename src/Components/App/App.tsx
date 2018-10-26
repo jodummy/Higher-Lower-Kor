@@ -3,7 +3,7 @@ import Game from "../../Routes/Game";
 import Home from "../../Routes/Home";
 import Result from "../../Routes/Result";
 import { GlobalStyle } from "../../global-styles";
-import { Switch, Route, Redirect } from "react-router";
+import { Switch, Route } from "react-router";
 
 class App extends React.Component {
   public render() {
@@ -20,7 +20,7 @@ class App extends React.Component {
             }}
           />
           <Route path="/result" exact={true} component={Result} />
-          <Redirect from={"*"} to={"/"} />
+          {/* <Redirect from={"*"} to={"/"} /> */}
         </Switch>
       </React.Fragment>
     );

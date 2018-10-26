@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import AnimatedNumber from "react-animated-number";
+import { data } from "./keywordData";
 
 interface IGameContainerProps {
   index: number;
@@ -215,6 +216,7 @@ const KeywordTitle = styled.div`
 
 const KeywordSubtitle = styled.div`
   font-size: 21px;
+  font-weight: bolder;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -227,6 +229,7 @@ const HighScore = styled.div`
   color: white;
   position: absolute;
   font-size: 21px;
+  font-weight: bolder;
   top: 5px;
   left: 5px;
 `;
@@ -235,6 +238,7 @@ const CurrentScore = styled.div`
   color: white;
   position: absolute;
   font-size: 21px;
+  font-weight: bolder;
   top: 5px;
   right: 10px;
 `;
@@ -283,154 +287,7 @@ const AnswerButton = styled.div`
     }
   }
 `;
-
-let keywordData = [
-  {
-    url:
-      "https://static1.squarespace.com/static/595ff73ef5e2315e45b9f239/t/5b16b94088251b408d6352d0/1528215875466/NS_RD_Drake2.jpg?format=1500w",
-    source: "Naver",
-    name: "드레이크",
-    count: 1610000
-  },
-  {
-    url:
-      "https://www.grammy.com/sites/com/files/styles/news_detail_header/public/gettyimages-877192122.jpg?itok=gW_QMOgT",
-
-    source: "Naver",
-    name: "방탄소년단",
-    count: 92300000
-  },
-  {
-    url:
-      "https://image.fmkorea.com/files/attach/new/20180830/486616/403814545/1242160460/ff51296b67bb6310e4304603dbde3c1f.jpg",
-    name: "퍼스트 맨",
-    count: 11100000
-  },
-  {
-    url:
-      "http://esquirekorea.co.kr/wp-content/uploads/2017/09/esq201709_fashion_screen_001.jpg",
-    name: "라이언 고슬링",
-    count: 703000
-  },
-  {
-    url:
-      "http://www.hawtcelebs.com/wp-content/uploads/2017/08/emma-stone-on-the-set-of-maniac-in-new-york-08-14-2017_4.jpg",
-    name: "엠마 스톤",
-    count: 1740000
-  },
-  {
-    url:
-      "http://file3.instiz.net/data/file3/2018/02/07/9/3/a/93a0dc003b2ae93364a3ebdb57e8843d.jpg",
-    name: "침착맨",
-    count: 7530000
-  },
-  {
-    url:
-      "http://mblogthumb4.phinf.naver.net/MjAxNjEwMjRfMTE5/MDAxNDc3Mjk1NDA1OTM0.2fMLbAyHQjMpAAlQ8L-mIGNw9wssdObjo95iZgQnm34g.v_TiDzuwOEoQI9nCd07i5LhEPQbkT3eNzWBwj9R5o5og.PNG.kyungchul87/2_%281%29.png?type=w800",
-    name: "최민식",
-    count: 1590000
-  },
-  {
-    url:
-      "https://yt3.ggpht.com/a-/AN66SAw-3Llae2Od5S-4BuuqcF5VnZ034EsXvr_zbg=s900-mo-c-c0xffffffff-rj-k-no",
-    name: "송강호",
-    count: 1760000
-  },
-  {
-    url: "http://c.huv.kr/c/fd/fd4f369ff1d7513cf0e849253c3a69e0e97b02a5.jpg",
-    name: "서든어택2",
-    count: 5750000
-  },
-  {
-    url: "https://t1.daumcdn.net/cfile/tistory/265D513458FF68A518",
-    name: "트위치",
-    count: 38400000
-  },
-  {
-    url:
-      "https://vignette.wikia.nocookie.net/genesis/images/4/49/Genesis_3_p2_pack.jpg/revision/latest?cb=20131215122228&path-prefix=ko",
-    name: "창세기전",
-    count: 1670000
-  },
-  {
-    url: "https://www.youtube.com/yts/img/yt_1200-vfl4C3T0K.png",
-    name: "유튜브",
-    count: 74900000
-  },
-  {
-    url:
-      "http://extmovie.maxmovie.com/xe/files/attach/images/174/860/935/fab88bc5687819ff482c3cef05f7d5df.jpg",
-    name: "DJ 앙꼬",
-    count: 2160000
-  },
-  {
-    url:
-      "https://mir-s3-cdn-cf.behance.net/project_modules/fs/3393f738210507.575900b317fb4.png",
-    name: "네이버",
-    count: 329000000
-  },
-  {
-    url: "https://thumbs.gfycat.com/SoftGrandioseCod-poster.jpg",
-    name: "아이유",
-    count: 46200000
-  },
-  {
-    url: "http://foodingbox.com/web/product/big/201709/87_shop1_881146.jpg",
-    name: "뼈해장국",
-    count: 1090000
-  },
-  {
-    url:
-      "http://file3.instiz.net/data/cached_img/upload/2018/05/02/9/094727cdce8c9a3e030814a80fefb33e.jpg",
-    name: "김치피자탕수육",
-    count: 658000
-  },
-  {
-    url: "https://t1.daumcdn.net/cfile/tistory/2104A34D554E7C591B",
-    name: "여몽",
-    count: 195000
-  },
-  {
-    url:
-      "http://playwares.com/files/attach/images/423601/502/917/042/924ce736db8f2e22ea6fc930f14b0c22.jpg",
-    name: "제갈량",
-    count: 1280000
-  },
-  {
-    url: "https://i.ytimg.com/vi/FmDPQ6D42HI/maxresdefault.jpg",
-    name: "리그 오브 레전드",
-    count: 80100000
-  },
-  {
-    url: "https://news4c.com/wp-content/uploads/2017/09/GTA-5-APK-Android.jpg",
-    name: "GTA",
-    count: 242000000
-  },
-  {
-    url:
-      "https://t1.daumcdn.net/thumb/R1280x0/?fname=http://t1.daumcdn.net/brunch/service/user/4Bq/image/2gJEgzDsrmpJqZb8TWMUa8Oferw.jpg",
-    name: "이와이 슌지",
-    count: 143000
-  },
-  {
-    url:
-      "http://cfs12.tistory.com/original/18/tistory/2010/01/09/02/45/4b476f322d745",
-    name: "무한도전",
-    count: 20400000
-  },
-  {
-    url:
-      "https://asialive365.com/wp-content/uploads/2016/09/c-edm-fests-heading-east.jpg",
-    name: "EDM",
-    count: 97600000
-  },
-  {
-    url:
-      "https://scontent-atl3-1.cdninstagram.com/vp/1b47486e6ca900a9e09220b1fe404180/5C51D9E0/t51.2885-15/e35/38931424_1140000602820867_6577468794342473728_n.jpg",
-    name: "보이후드",
-    count: 3130000
-  }
-];
+let keywordData = data;
 
 interface IProps {
   history: any;
@@ -452,7 +309,9 @@ class Game extends React.Component<IProps, IState> {
     keywordData = this.shuffle(keywordData);
     this.state = {
       currentScore: 0,
-      highScore: 0,
+      highScore: localStorage.getItem("higherlowerkorhighscore")
+        ? parseInt(localStorage.getItem("higherlowerkorhighscore")!, 10)
+        : 0,
       keywords: [keywordData[0], keywordData[1], keywordData[2]],
       index: 0,
       state: "START",
@@ -532,7 +391,10 @@ class Game extends React.Component<IProps, IState> {
                           <AnimatedNumber
                             component="text"
                             value={keyword.count}
-                            style={{ transition: "1s ease" }}
+                            style={{
+                              transition: "1s ease",
+                              fontWeight: "bolder"
+                            }}
                             duration={1000}
                             formatValue={(n: any) => n.toLocaleString()}
                             stepPrecision={0}
@@ -633,6 +495,10 @@ class Game extends React.Component<IProps, IState> {
 
   public wrongAnswer = () => {
     setTimeout(() => {
+      localStorage.setItem(
+        "higherlowerkorhighscore",
+        this.state.currentScore.toString()
+      );
       this.props.history.push({
         pathname: `/result`,
         state: {
