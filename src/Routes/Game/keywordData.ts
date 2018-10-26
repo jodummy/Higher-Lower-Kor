@@ -37,6 +37,20 @@ import starcraft from "../../img/starcraft.jpg";
 import diablo from "../../img/diablo.jpg";
 import happy from "../../img/happy.png";
 import getjob from "../../img/getjob.jpg";
+import withgod from "../../img/withgod.jpg";
+import trump from "../../img/trump.jpg";
+import gucci from "../../img/gucci.jpg";
+import gd from "../../img/gd.jpg";
+import google from "../../img/google.png";
+import timothee from "../../img/timothee.png";
+import avengers from "../../img/avengers.jpg";
+import marvel from "../../img/marvel.jpg";
+import dc from "../../img/dc.jpeg";
+import conjuring from "../../img/conjuring.jpeg";
+import machinelearning from "../../img/machinelearning.jpg";
+import zelda from "../../img/zelda.jpg";
+import camel from "../../img/camel.jpg";
+import ostrich from "../../img/ostrich.jpg";
 
 export let data = [
   { url: drake, source: "Naver", name: "드레이크", count: 1610000 },
@@ -77,5 +91,19 @@ export let data = [
   { url: starcraft, name: "스타크래프트", count: 18500000 },
   { url: diablo, name: "디아블로", count: 36000000 },
   { url: happy, name: "행복", count: 173000000 },
-  { url: getjob, name: "취업", count: 82500000 }
+  { url: getjob, name: "취업", count: 82500000 },
+  { url: withgod, name: "신과 함께", count: 9610000 },
+  { url: trump, name: "트럼프", count: 43800000 },
+  { url: gucci, name: "구찌", count: 16700000 },
+  { url: gd, name: "지드래곤", count: 18300000 },
+  { url: google, name: "구글", count: 128000000 },
+  { url: timothee, name: "티모시 샬라메", count: 288000 },
+  { url: avengers, name: "어벤져스", count: 10600000 },
+  { url: marvel, name: "MARVEL", count: 501000000 },
+  { url: dc, name: "DC", count: 2160000000 },
+  { url: conjuring, name: "컨저링", count: 481000 },
+  { url: zelda, name: "젤다", count: 3940000 },
+  { url: camel, name: "타조", count: 3050000 },
+  { url: ostrich, name: "낙타", count: 4140000 },
+  { url: machinelearning, name: "머신 러닝", count: 6250000 }
 ];
