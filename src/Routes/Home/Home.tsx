@@ -37,7 +37,7 @@ const MainTitleImg = styled<IMainTitleImg, any>("img")`
   /* font-family: "Nanum Myeongjo", serif; */
   @keyframes float {
     0% {
-      -webkit-filter: drop-shadow(0 5px 15px zrgba(0, 0, 0, 1));
+      -webkit-filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 1));
       filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 1));
       transform: translatey(0px);
     }
@@ -50,7 +50,7 @@ const MainTitleImg = styled<IMainTitleImg, any>("img")`
     }
     100% {
       -webkit-filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 1));
-      filter: drop-shadow(0 25px 15px rgba(0, 0, 0, 1));
+      filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 1));
       transform: translatey(0px);
     }
   }
