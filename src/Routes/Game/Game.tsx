@@ -205,7 +205,7 @@ const KeywordInfoContainer = styled.div`
 `;
 
 const KeywordTitle = styled.div`
-  font-size: 40px;
+  font-size: 60px;
   font-weight: bolder;
   display: flex;
   align-items: center;
@@ -384,8 +384,57 @@ let keywordData = [
       "http://file3.instiz.net/data/cached_img/upload/2018/05/02/9/094727cdce8c9a3e030814a80fefb33e.jpg",
     name: "김치피자탕수육",
     count: 658000
+  },
+  {
+    url: "https://t1.daumcdn.net/cfile/tistory/2104A34D554E7C591B",
+    name: "여몽",
+    count: 195000
+  },
+  {
+    url:
+      "http://playwares.com/files/attach/images/423601/502/917/042/924ce736db8f2e22ea6fc930f14b0c22.jpg",
+    name: "제갈량",
+    count: 1280000
+  },
+  {
+    url: "https://i.ytimg.com/vi/FmDPQ6D42HI/maxresdefault.jpg",
+    name: "리그 오브 레전드",
+    count: 80100000
+  },
+  {
+    url: "https://news4c.com/wp-content/uploads/2017/09/GTA-5-APK-Android.jpg",
+    name: "GTA",
+    count: 242000000
+  },
+  {
+    url:
+      "https://t1.daumcdn.net/thumb/R1280x0/?fname=http://t1.daumcdn.net/brunch/service/user/4Bq/image/2gJEgzDsrmpJqZb8TWMUa8Oferw.jpg",
+    name: "이와이 슌지",
+    count: 143000
+  },
+  {
+    url:
+      "http://cfs12.tistory.com/original/18/tistory/2010/01/09/02/45/4b476f322d745",
+    name: "무한도전",
+    count: 20400000
+  },
+  {
+    url:
+      "https://asialive365.com/wp-content/uploads/2016/09/c-edm-fests-heading-east.jpg",
+    name: "EDM",
+    count: 97600000
+  },
+  {
+    url:
+      "https://scontent-atl3-1.cdninstagram.com/vp/1b47486e6ca900a9e09220b1fe404180/5C51D9E0/t51.2885-15/e35/38931424_1140000602820867_6577468794342473728_n.jpg",
+    name: "보이후드",
+    count: 3130000
   }
 ];
+
+interface IProps {
+  history: any;
+}
 
 interface IState {
   currentScore: number;
@@ -397,8 +446,8 @@ interface IState {
   answerClick: boolean;
 }
 
-class Game extends React.Component<any, IState> {
-  constructor(props: any) {
+class Game extends React.Component<IProps, IState> {
+  constructor(props: IProps) {
     super(props);
     keywordData = this.shuffle(keywordData);
     this.state = {
@@ -583,7 +632,14 @@ class Game extends React.Component<any, IState> {
   };
 
   public wrongAnswer = () => {
-    console.log("wrong!");
+    setTimeout(() => {
+      this.props.history.push({
+        pathname: `/result`,
+        state: {
+          score: this.state.currentScore
+        }
+      });
+    }, 1000);
   };
 
   public shuffle = (a: any) => {

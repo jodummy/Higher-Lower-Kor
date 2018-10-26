@@ -5,12 +5,12 @@ import { createGlobalStyle } from "./typed-components";
 export const GlobalStyle = createGlobalStyle`
 ${reset};
 @import url("https://use.fontawesome.com/releases/v5.0.13/css/all.css");
-@import url("https://fonts.googleapis.com/css?family=Maven+Pro|Roboto:300:400,700|Eczar|Oswald|Playfair+Display|Hanalei+Fill|Quicksand|Open+Sans|Raleway|Anton|Do+Hyeon|Kirang+Haerang|Nanum+Gothic|Nanum+Gothic+Coding|Nanum+Myeongjo|Nanum+Pen+Script|Sunflower:300");
-
+@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic|Nanum+Myeongjo|Nanum+Pen+Script');
   * {
       box-sizing: border-box;
   }
   body{
+    font-family: 'Nanum Gothic', sans-serif;
       overflow: hidden;
     color: white;
   }
