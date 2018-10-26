@@ -2,6 +2,16 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { grade } from "./grade";
+import {
+  FacebookShareButton,
+  FacebookIcon,
+  TwitterShareButton,
+  TwitterIcon,
+  RedditShareButton,
+  RedditIcon,
+  EmailShareButton,
+  EmailIcon
+} from "react-share";
 
 interface IResultContainerProps {
   url: string;
@@ -42,35 +52,43 @@ const ResultSubtitle = styled.div`
 `;
 
 const SocialContainer = styled.div`
+  margin-top: 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 180px;
 `;
 
-const ShareButton = styled.div`
-  width: 80px;
-  height: 40px;
-  font-size: 15px;
-  padding: 5px 15px;
-  border-radius: 10px;
-  margin: 15px 0;
-  transition: 0.2s ease;
+const ButtonContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  cursor: pointer;
-  &:hover {
-    box-shadow: 0px 5px 0px rgba(0, 0, 0, 1);
-  }
 `;
 
+// const ShareButton = styled.div`
+//   width: 80px;
+//   height: 40px;
+//   font-size: 15px;
+//   padding: 5px 15px;
+//   border-radius: 10px;
+//   margin: 15px 0;
+//   transition: 0.2s ease;
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-between;
+//   cursor: pointer;
+//   &:hover {
+//     box-shadow: 0px 5px 0px rgba(0, 0, 0, 1);
+//   }
+// `;
+
 const RetryButton = styled.div`
-  font-size: 25px;
+  font-size: 20px;
+  font-weight: bolder;
   padding: 15px 25px;
-  border-radius: 100px;
+  border-radius: 20px;
   border: 2px solid white;
-  margin: 15px 0;
+  margin: 15px 5px;
   transition: 0.2s ease;
   &:hover {
     color: black;
@@ -126,18 +144,43 @@ class Result extends React.Component<IProps, any> {
         <ResultSubtitle>{message}</ResultSubtitle>
         <Info>* 유저 평균 3.2점</Info>
         <SocialContainer>
-          <ShareButton style={{ backgroundColor: "#3b5998" }}>
-            <i className="fab fa-facebook" />
-            <span>공유</span>
-          </ShareButton>
-          <ShareButton style={{ backgroundColor: "#55acee" }}>
-            <i className="fab fa-twitter" />
-            <span>트윗</span>
-          </ShareButton>
+          <FacebookShareButton url={"https://higherlowerkor.now.sh/"}>
+            <FacebookIcon
+              size={32}
+              round={true}
+              iconBgStyle={{ cursor: "pointer", transition: "0.5s ease" }}
+            />
+          </FacebookShareButton>
+          <TwitterShareButton url={"https://higherlowerkor.now.sh/"}>
+            <TwitterIcon
+              size={32}
+              round={true}
+              iconBgStyle={{ cursor: "pointer", transition: "0.5s ease" }}
+            />
+          </TwitterShareButton>
+          <RedditShareButton url={"https://higherlowerkor.now.sh/"}>
+            <RedditIcon
+              size={32}
+              round={true}
+              iconBgStyle={{ cursor: "pointer", transition: "0.5s ease" }}
+            />
+          </RedditShareButton>
+          <EmailShareButton url={"https://higherlowerkor.now.sh/"}>
+            <EmailIcon
+              size={32}
+              round={true}
+              iconBgStyle={{ cursor: "pointer", transition: "0.5s ease" }}
+            />
+          </EmailShareButton>
         </SocialContainer>
-        <Link to={"/game"}>
-          <RetryButton>재도전</RetryButton>
-        </Link>
+        <ButtonContainer>
+          <Link to={"/"}>
+            <RetryButton>메인</RetryButton>
+          </Link>
+          <Link to={"/game"}>
+            <RetryButton>재도전</RetryButton>
+          </Link>
+        </ButtonContainer>
       </ResultContainer>
     );
   }

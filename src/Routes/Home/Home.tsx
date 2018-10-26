@@ -37,8 +37,8 @@ const MainTitleImg = styled<IMainTitleImg, any>("img")`
   /* font-family: "Nanum Myeongjo", serif; */
   @keyframes float {
     0% {
-      -webkit-filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 1));
-      filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 1));
+      -webkit-filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 1));
+      filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 1));
       transform: translatey(0px);
     }
     50% {
@@ -49,8 +49,8 @@ const MainTitleImg = styled<IMainTitleImg, any>("img")`
         props.dir === "UP" ? "translatey(20px)" : "translatey(-20px)"};
     }
     100% {
-      -webkit-filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 1));
-      filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 1));
+      -webkit-filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 1));
+      filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 1));
       transform: translatey(0px);
     }
   }
@@ -86,7 +86,21 @@ const StartButton = styled.div`
   }
 `;
 
-const SuggestionButton = styled.div``;
+const SuggestionButton = styled.div`
+  cursor: pointer;
+  animation: floatbutton 3s ease-in-out infinite;
+  @keyframes floatbutton {
+    0% {
+      transform: translatey(0px);
+    }
+    50% {
+      transform: translatey(5px);
+    }
+    100% {
+      transform: translatey(0px);
+    }
+  }
+`;
 
 class Home extends React.Component<any, any> {
   public render() {
@@ -104,7 +118,15 @@ class Home extends React.Component<any, any> {
         <Link to={"/game"}>
           <StartButton>게임 시작!</StartButton>
         </Link>
-        <SuggestionButton>검색어를 제안해주세요!</SuggestionButton>
+        <SuggestionButton
+          onClick={() =>
+            window.open(
+              "mailto:leegun2003@gmail.com?subject=주제어 제안&body=주제어: , 이유: "
+            )
+          }
+        >
+          메일로 검색어를 제안해주세요!
+        </SuggestionButton>
       </HomeContainer>
     );
   }

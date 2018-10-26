@@ -87,6 +87,7 @@ const RightIcon = styled.div`
   justify-content: center;
   border-radius: 100%;
   background-color: green;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
 `;
 
 const WrongIcon = styled.div`
@@ -103,6 +104,7 @@ const WrongIcon = styled.div`
   justify-content: center;
   border-radius: 100%;
   background-color: darkred;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
 `;
 
 const VersusIcon = styled.div`
@@ -115,6 +117,8 @@ const VersusIcon = styled.div`
   align-items: center;
   justify-content: center;
   border-radius: 100%;
+  font-weight: bolder;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
 `;
 
 interface IFlipperProps {
@@ -130,7 +134,7 @@ const Flipper = styled<IFlipperProps, any>("div")`
   margin-top: -50px;
   width: 100px;
   height: 100px;
-
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
   border-radius: 100%;
   color: white;
   background-color: darkgoldenrod;
@@ -230,8 +234,8 @@ const HighScore = styled.div`
   position: absolute;
   font-size: 21px;
   font-weight: bolder;
-  top: 5px;
-  left: 5px;
+  top: 15px;
+  left: 15px;
 `;
 
 const CurrentScore = styled.div`
@@ -239,8 +243,8 @@ const CurrentScore = styled.div`
   position: absolute;
   font-size: 21px;
   font-weight: bolder;
-  top: 5px;
-  right: 10px;
+  top: 15px;
+  right: 20px;
 `;
 const ButtonContainer = styled.div`
   display: flex;
@@ -318,6 +322,7 @@ class Game extends React.Component<IProps, IState> {
       answerResult: "STANDBY",
       answerClick: false
     };
+    console.log(keywordData.length);
   }
   public render() {
     const { keywords, state, answerClick, answerResult } = this.state;
@@ -495,10 +500,18 @@ class Game extends React.Component<IProps, IState> {
 
   public wrongAnswer = () => {
     setTimeout(() => {
-      localStorage.setItem(
-        "higherlowerkorhighscore",
-        this.state.currentScore.toString()
-      );
+      localStorage.getItem("higherlowerkorhighscore")
+        ? parseInt(localStorage.getItem("higherlowerkorhighscore")!, 10) <
+          this.state.currentScore
+          ? localStorage.setItem(
+              "higherlowerkorhighscore",
+              this.state.currentScore.toString()
+            )
+          : localStorage.getItem("higherlowerkorhighscore")
+        : localStorage.setItem(
+            "higherlowerkorhighscore",
+            this.state.currentScore.toString()
+          );
       this.props.history.push({
         pathname: `/result`,
         state: {
