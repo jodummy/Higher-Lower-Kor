@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import higher from "../../img/logo/higher.png";
 import lower from "../../img/logo/lower.png";
+import { media } from "src/config/_mixin";
 
 const HomeContainer = styled.div`
   position: absolute;
@@ -23,6 +24,10 @@ const HomeContainer = styled.div`
 const MainTitleImgContainer = styled.div`
   display: flex;
   font-size: 40px;
+  transition: 1s ease;
+  ${media.desktop`  
+  font-size: 25px;
+  `};
 `;
 
 interface IMainTitleImg {
@@ -31,7 +36,6 @@ interface IMainTitleImg {
 const MainTitleImg = styled<IMainTitleImg, any>("img")`
   width: 250px;
   height: 140px;
-  font-weight: bolder;
   margin: 0px 10px 30px;
   animation: float 6s ease-in-out infinite;
   /* font-family: "Nanum Myeongjo", serif; */
@@ -54,23 +58,44 @@ const MainTitleImg = styled<IMainTitleImg, any>("img")`
       transform: translatey(0px);
     }
   }
+  transition: 1s ease;
+  ${media.desktop`  
+  
+  width: 100px;
+  height: 60px;
+  margin: 0px 5px 15px;
+  `};
 `;
 
 const ExplainTitle = styled.div`
   font-weight: bolder;
   font-size: 27px;
   margin-bottom: 15px;
+  transition: 1s ease;
+  ${media.desktop`  
+    font-size: 15px;
+    margin-bottom: 10px;
+  `};
 `;
 
 const ExplainSubtitle = styled.div`
   font-size: 18px;
   font-weight: bold;
   margin-bottom: 10px;
+  transition: 1s ease;
+  ${media.desktop`  
+    font-size: 12px;
+    margin-bottom: 7px;
+  `};
 `;
 
 const ExplainAdditional = styled.div`
   opacity: 0.5;
   font-size: 12px;
+  transition: 1s ease;
+  ${media.desktop`  
+    font-size: 10px;
+  `};
 `;
 
 const StartButton = styled.div`
@@ -84,6 +109,16 @@ const StartButton = styled.div`
     color: black;
     background-color: white;
   }
+  transition: 1s ease;
+  ${media.desktop`  
+    font-size: 15px;
+      padding: 10px 15px;
+      
+  border: 1px solid white;
+  
+  margin: 10px 0;
+
+  `};
 `;
 
 const SuggestionButton = styled.div`
@@ -100,6 +135,11 @@ const SuggestionButton = styled.div`
       transform: translatey(0px);
     }
   }
+  transition: 1s ease;
+  ${media.desktop`  
+    font-size: 10px;
+
+  `};
 `;
 
 class Home extends React.Component<any, any> {
