@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import AnimatedNumber from "react-animated-number";
 import { data } from "./keywordData";
+import { media } from "src/config/_mixin";
 
 interface IGameContainerProps {
   index: number;
@@ -14,12 +15,21 @@ const GameContainer = styled<IGameContainerProps, any>("div")`
   display: flex;
   transition: 1s ease;
   transform: ${props => `translateX(${-33.33 * props.index}%)`};
+  ${media.desktop`
+    width: 100%;
+    height: 150%;
+  `};
 `;
 
 const InnerGameContainer = styled.div`
   position: absolute;
   z-index: 2;
   width: 66.666%;
+
+  transition: 1s ease;
+  ${media.desktop`
+    width: 100%;
+  `};
 `;
 
 interface IKeywordListProps {
@@ -55,6 +65,25 @@ const KeywordList = styled<IKeywordListProps, any>("div")`
         return `translateX(-33.33%)`;
     }
   }};
+  ${media.desktop`
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    transform: ${(props: any) => {
+      switch (props.state) {
+        case "START":
+          return null;
+        case "CLICKANSWER":
+          return null;
+        case "ANSWERRESULT":
+          return null;
+        case "SLIDEMOVE":
+          return `translateY(-33.33%)`;
+        default:
+          return null;
+      }
+    }};
+  `};
 `;
 
 interface IKeywordContainerProps {
@@ -72,6 +101,10 @@ const KeywordContainer = styled<IKeywordContainerProps, any>("div")`
   background-size: auto 100%;
   background-position: 50% 50%;
   background-repeat: no-repeat;
+  transition: 1s ease;
+  ${media.desktop`
+  background-size: auto 150%;
+  `};
 `;
 
 const RightIcon = styled.div`
@@ -199,6 +232,16 @@ const Flipper = styled<IFlipperProps, any>("div")`
       }
     }};
   }
+  ${media.desktop`
+
+  font-size: 20px;
+  margin-left: -25px;
+  margin-top: -25px;
+  width: 50px;
+  height: 50px;
+  top: 33.33%;
+  left: 50%;
+  `};
 `;
 
 const KeywordInfoContainer = styled.div`
@@ -216,6 +259,10 @@ const KeywordTitle = styled.div`
   align-items: center;
   justify-content: center;
   margin-bottom: 10px;
+  transition: 1s ease;
+  ${media.desktop`  
+  font-size: 30px;
+  `};
 `;
 
 const KeywordSubtitle = styled.div`
@@ -225,6 +272,10 @@ const KeywordSubtitle = styled.div`
   align-items: center;
   justify-content: center;
   margin-bottom: 10px;
+  transition: 1s ease;
+  ${media.desktop`  
+  font-size: 12px;
+  `};
 `;
 
 // const Source = styled.div``;
@@ -236,6 +287,10 @@ const HighScore = styled.div`
   font-weight: bolder;
   top: 15px;
   left: 15px;
+  transition: 1s ease;
+  ${media.desktop`  
+  font-size: 15px;
+  `};
 `;
 
 const CurrentScore = styled.div`
@@ -245,6 +300,10 @@ const CurrentScore = styled.div`
   font-weight: bolder;
   top: 15px;
   right: 20px;
+  transition: 1s ease;
+  ${media.desktop`  
+  font-size: 15px;
+  `};
 `;
 const ButtonContainer = styled.div`
   display: flex;
@@ -290,6 +349,13 @@ const AnswerButton = styled.div`
       transform: translateY(5px);
     }
   }
+  ${media.desktop`
+
+  font-size: 15px;
+  font-weight: bolder;
+  padding: 5px 15px;
+  border: 2px solid white;
+  `};
 `;
 let keywordData = data;
 

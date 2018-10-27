@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import higher from "../../img/higher.png";
-import lower from "../../img/lower.png";
+import higher from "../../img/logo/higher.png";
+import lower from "../../img/logo/lower.png";
 
 const HomeContainer = styled.div`
   position: absolute;
