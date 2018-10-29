@@ -168,7 +168,7 @@ class Home extends React.Component<any, any> {
         <SuggestionButton
           onClick={() =>
             window.open(
-              "mailto:leegun2003@gmail.com?subject=주제어 제안&body=주제어: , 이유: "
+              "mailto:leegun2003@gmail.com?subject=주제어 제안&body=보내시는 분: 건의 내용: 관심 가져주셔서 감사합니다."
             )
           }
         >

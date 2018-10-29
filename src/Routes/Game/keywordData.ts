@@ -87,32 +87,62 @@ import vlog from "../../img/keyword/vlog.png";
 import army from "../../img/keyword/army.jpg";
 import samkukji from "../../img/keyword/samkukji.jpg";
 import citypop from "../../img/keyword/citypop.jpg";
+import postmalone from "../../img/keyword/postmalone.jpg";
+import bitcoin from "../../img/keyword/bitcoin.jpg";
+import tomandjerry from "../../img/keyword/tomandjerry.jpeg";
+import pablopicasso from "../../img/keyword/pablopicasso.jpg";
+import democracy from "../../img/keyword/postmalone.jpg";
+import baedona from "../../img/keyword/baedona.jpg";
+import aoiyu from "../../img/keyword/aoiyu.jpg";
+
+import kimhaeja from "../../img/keyword/kimhaeja.png";
+import chusunghune from "../../img/keyword/chusunghune.jpg";
+import yoojaesuk from "../../img/keyword/yoojaesuk.jpg";
+import ganghodong from "../../img/keyword/ganghodong.jpg";
+import leebeunghun from "../../img/keyword/leebeunghun.gif";
+import samsung from "../../img/keyword/samsung.png";
+import alphago from "../../img/keyword/alphago.jpg";
+import dota from "../../img/keyword/dota.jpg";
+import pokemon from "../../img/keyword/pokemon.jpg";
+import disney from "../../img/keyword/disney.jpg";
+// 100
+import hios from "../../img/keyword/disney.jpg";
 
 export let data = [
-  { url: drake, name: "드레이크", count: 1610000 },
-  { url: bts, name: "방탄소년단", count: 92300000 },
-  { url: firstman, name: "퍼스트 맨", count: 11100000 },
-  { url: ryangosling, name: "라이언 고슬링", count: 703000 },
-  { url: emmastone, name: "엠마 스톤", count: 1740000 },
-  { url: calmdownman, name: "침착맨", count: 7530000 },
-  { url: choiminsick, name: "최민식", count: 1590000 },
-  { url: songgangho, name: "송강호", count: 1760000 },
-  { url: kingdengodtektwo, name: "서든어택2", count: 5750000 },
-  { url: twitch, name: "트위치", count: 38400000 },
-  { url: genesis, name: "창세기전", count: 1670000 },
-  { url: youtube, name: "유튜브", count: 74900000 },
-  { url: django, name: "장고", count: 2450000 },
-  { url: naver, name: "네이버", count: 329000000 },
-  { url: iu, name: "아이유", count: 46200000 },
-  { url: bonestew, name: "뼈해장국", count: 1090000 },
-  { url: itsnotatrash, name: "김치피자탕수육", count: 658000 },
-  { url: punchguy, name: "여몽", count: 195000 },
-  { url: jegal, name: "제갈량", count: 1280000 },
-  { url: lol, name: "리그 오브 레전드", count: 80100000 },
-  { url: gta, name: "GTA", count: 22600000 },
-  { url: iwai, name: "이와이 슌지", count: 143000 },
-  { url: mudo, name: "무한도전", count: 20400000 },
-  { url: edm, name: "EDM", count: 4580000 },
+  { url: drake, category: "인물", name: "드레이크", count: 1610000 },
+  { url: bts, category: "인물", name: "방탄소년단", count: 92300000 },
+  { url: firstman, category: "영화", name: "퍼스트 맨", count: 11100000 },
+  { url: ryangosling, category: "인물", name: "라이언 고슬링", count: 703000 },
+  { url: emmastone, category: "인물", name: "엠마 스톤", count: 1740000 },
+  { url: calmdownman, category: "인물", name: "침착맨", count: 7530000 },
+  { url: choiminsick, category: "인물", name: "최민식", count: 1590000 },
+  { url: songgangho, category: "인물", name: "송강호", count: 1760000 },
+  {
+    url: kingdengodtektwo,
+    category: "게임",
+    name: "서든어택2",
+    count: 5750000
+  },
+  { url: twitch, category: "기업", name: "트위치", count: 38400000 },
+  { url: genesis, category: "게임", name: "창세기전", count: 1670000 },
+  { url: youtube, category: "기업", name: "유튜브", count: 74900000 },
+  { url: django, category: "영화", name: "장고", count: 2450000 },
+  { url: naver, category: "기업", name: "네이버", count: 329000000 },
+  { url: iu, category: "인물", name: "아이유", count: 46200000 },
+  { url: bonestew, category: "음식", name: "뼈해장국", count: 1090000 },
+  {
+    url: itsnotatrash,
+    category: "음식",
+    name: "김치피자탕수육",
+    count: 658000
+  },
+  { url: punchguy, category: "인물", name: "여몽", count: 195000 },
+  { url: jegal, category: "인물", name: "제갈량", count: 1280000 },
+  { url: lol, category: "게임", name: "리그 오브 레전드", count: 80100000 },
+  { url: gta, category: "게임", name: "GTA", count: 22600000 },
+  { url: iwai, category: "인물", name: "이와이 슌지", count: 143000 },
+  { url: mudo, category: "예능 프로그램", name: "무한도전", count: 20400000 },
+  { url: edm, category: "게임", name: "EDM", count: 4580000 },
   { url: boyhood, name: "보이후드", count: 3130000 },
   { url: hajungu, name: "사이코패스", count: 2970000 },
   { url: ppuyo, name: "뿌요뿌요", count: 986000 },
@@ -171,5 +201,23 @@ export let data = [
   { url: army, name: "군대", count: 15100000 },
   { url: samkukji, name: "삼국지", count: 14800000 },
   { url: dengdeng, name: "댕댕이", count: 17600000 },
-  { url: citypop, name: "시티 팝", count: 4080000 }
+  { url: citypop, name: "시티 팝", count: 4080000 },
+  { url: postmalone, name: "포스트 말론", count: 189000 },
+  { url: bitcoin, name: "비트코인", count: 46300000 },
+  { url: tomandjerry, name: "톰과 제리", count: 1240000 },
+  { url: pablopicasso, name: "파블로 피카소", count: 23900000 },
+  { url: democracy, name: "민주주의", count: 196000000 },
+  { url: baedona, name: "배두나", count: 2140000 },
+  { url: aoiyu, name: "아오이 유우", count: 530000 },
+  { url: kimhaeja, name: "김혜자", count: 520000 },
+  { url: chusunghune, name: "추성훈", count: 1570000 },
+  { url: yoojaesuk, name: "유재석", count: 11700000 },
+  { url: ganghodong, name: "강호동", count: 7600000 },
+  { url: leebeunghun, name: "이병헌", count: 8390000 },
+  { url: samsung, name: "삼성", count: 174000000 },
+  { url: alphago, name: "알파고", count: 12200000 },
+  { url: dota, name: "도타", count: 4240000 },
+  { url: pokemon, name: "포켓몬스터", count: 42900000 },
+  { url: disney, name: "CI즈LI", count: 24100000 },
+  { url: hios, name: "히어로즈 오브 더 스톰", count: 189000 }
 ];
