@@ -20,7 +20,6 @@ class App extends React.Component {
             }}
           />
           <Route path="/result" exact={true} component={Result} />
-          {/* <Redirect from={"*"} to={"/"} /> */}
         </Switch>
       </React.Fragment>
     );

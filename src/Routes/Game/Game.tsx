@@ -103,7 +103,7 @@ const KeywordContainer = styled<IKeywordContainerProps, any>("div")`
   background-repeat: no-repeat;
   transition: 1s ease;
   ${media.desktop`
-  background-size: auto 150%;
+  background-size: auto 120%;
   `};
 `;
 
@@ -261,12 +261,12 @@ const KeywordTitle = styled.div`
   margin-bottom: 10px;
   transition: 1s ease;
   ${media.desktop`  
-  font-size: 30px;
+  font-size: 40px;
   `};
 `;
 
 const KeywordSubtitle = styled.div`
-  font-size: 21px;
+  font-size: 30px;
   font-weight: bolder;
   display: flex;
   align-items: center;
@@ -274,7 +274,7 @@ const KeywordSubtitle = styled.div`
   margin-bottom: 10px;
   transition: 1s ease;
   ${media.desktop`  
-  font-size: 12px;
+  font-size: 21px;
   `};
 `;
 

@@ -19,6 +19,10 @@ const HomeContainer = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  transition: 1s ease;
+  ${media.desktop`
+    background-size: auto 100% ;
+  `};
 `;
 
 const MainTitleImgContainer = styled.div`
@@ -154,7 +158,10 @@ class Home extends React.Component<any, any> {
         <ExplainSubtitle>
           구글 검색량을 이용한 중독성 넘치는 검색량 비교 게임!
         </ExplainSubtitle>
-        <ExplainAdditional> * 자료는 2018년 10월 기준입니다</ExplainAdditional>
+        <ExplainAdditional>
+          {" "}
+          * 자료는 2018년 10월 기준, 영어 검색어는 한국어 웹 기준
+        </ExplainAdditional>
         <Link to={"/game"}>
           <StartButton>게임 시작!</StartButton>
         </Link>
@@ -165,7 +172,7 @@ class Home extends React.Component<any, any> {
             )
           }
         >
-          메일로 검색어를 제안해주세요!
+          검색어 제안, 오류 신고, 건의 사항은 여기로!
         </SuggestionButton>
       </HomeContainer>
     );

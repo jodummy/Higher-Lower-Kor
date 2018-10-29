@@ -12,6 +12,7 @@ import {
   EmailShareButton,
   EmailIcon
 } from "react-share";
+import { media } from "src/config/_mixin";
 
 interface IResultContainerProps {
   url: string;
@@ -31,11 +32,20 @@ const ResultContainer = styled<IResultContainerProps, any>("div")`
   flex-direction: column;
   background-size: 100% auto;
   background-position: 50% 50%;
+  transition: 1s ease;
+  ${media.desktop`
+    background-size: auto 100% ;
+  `};
 `;
 
 const ResultTitle = styled.div`
   font-size: 40px;
   margin-bottom: 10px;
+  transition: 1s ease;
+  ${media.desktop`
+  font-size: 30px;
+  margin-bottom: 6px;  
+  `};
 `;
 
 const Score = styled.div`
@@ -43,12 +53,22 @@ const Score = styled.div`
   font-weight: bolder;
   color: goldenrod;
   margin-bottom: 10px;
+  transition: 1s ease;
+  ${media.desktop`
+  font-size: 50px;
+  margin-bottom: 6px;  
+  `};
 `;
 
 const ResultSubtitle = styled.div`
   font-size: 20px;
   font-weight: bolder;
   margin-bottom: 10px;
+  transition: 1s ease;
+  ${media.desktop`
+  font-size: 15px;
+  margin-bottom: 6px;  
+  `};
 `;
 
 const SocialContainer = styled.div`
@@ -57,6 +77,12 @@ const SocialContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   width: 180px;
+  transition: 1s ease;
+  ${media.desktop`
+    width: 150px;
+
+  margin-top: 6px;
+  `};
 `;
 
 const ButtonContainer = styled.div`
@@ -94,11 +120,19 @@ const RetryButton = styled.div`
     color: black;
     background-color: white;
   }
+  transition: 1s ease;
+  ${media.desktop`
+font-size: 18px;
+  font-weight: bolder;
+  padding: 10px 20px;  `};
 `;
 
 const Info = styled.div`
   font-size: 15px;
   opacity: 0.5;
+  transition: 1s ease;
+  ${media.desktop`
+font-size: 12px; `};
 `;
 
 interface IProps {
@@ -129,11 +163,15 @@ class Result extends React.Component<IProps, any> {
     } else if (score <= 12) {
       url = grade[3].url;
       message = grade[3].message;
-    } else if (score <= 20) {
+    } else if (score <= 18) {
       url = grade[4].url;
       message = grade[4].message;
+    } else if (score <= 25) {
+      url = grade[5].url;
+      message = grade[5].message;
     }
   }
+
   public render() {
     console.log(this.props, this.state);
     const { score } = this.props.location.state;
@@ -144,28 +182,28 @@ class Result extends React.Component<IProps, any> {
         <ResultSubtitle>{message}</ResultSubtitle>
         <Info>* 유저 평균 3.2점</Info>
         <SocialContainer>
-          <FacebookShareButton url={"https://higherlowerkor.now.sh/"}>
+          <FacebookShareButton url={"https://higherlowerkorea.com"}>
             <FacebookIcon
               size={32}
               round={true}
               iconBgStyle={{ cursor: "pointer", transition: "0.5s ease" }}
             />
           </FacebookShareButton>
-          <TwitterShareButton url={"https://higherlowerkor.now.sh/"}>
+          <TwitterShareButton url={"https://higherlowerkorea.com"}>
             <TwitterIcon
               size={32}
               round={true}
               iconBgStyle={{ cursor: "pointer", transition: "0.5s ease" }}
             />
           </TwitterShareButton>
-          <RedditShareButton url={"https://higherlowerkor.now.sh/"}>
+          <RedditShareButton url={"https://higherlowerkorea.com"}>
             <RedditIcon
               size={32}
               round={true}
               iconBgStyle={{ cursor: "pointer", transition: "0.5s ease" }}
             />
           </RedditShareButton>
-          <EmailShareButton url={"https://higherlowerkor.now.sh/"}>
+          <EmailShareButton url={"https://higherlowerkorea.com"}>
             <EmailIcon
               size={32}
               round={true}

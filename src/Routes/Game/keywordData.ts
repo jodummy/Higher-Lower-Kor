@@ -45,7 +45,7 @@ import timothee from "../../img/keyword/timothee.png";
 import avengers from "../../img/keyword/avengers.jpg";
 import marvel from "../../img/keyword/marvel.jpg";
 import dc from "../../img/keyword/dc.jpeg";
-import conjuring from "../../img/keyword/conjuring.jpeg";
+import conjuring from "../../img/keyword/conjuring.jpg";
 import machinelearning from "../../img/keyword/machinelearning.jpg";
 import zelda from "../../img/keyword/zelda.jpg";
 import camel from "../../img/keyword/camel.jpg";
@@ -67,8 +67,29 @@ import redricecake from "../../img/keyword/redricecake.jpg";
 import apple from "../../img/keyword/apple.jpg";
 import parkchanho from "../../img/keyword/parkchanho.jpg";
 
+import kukbbong from "../../img/keyword/kukbbong.jpg";
+import gabbunsa from "../../img/keyword/gabbunsa.jpg";
+import arifryer from "../../img/keyword/arifryer.jpg";
+import heize from "../../img/keyword/heize.jpg";
+import juperl from "../../img/keyword/juperl.jpg";
+// 72
+
+import chicken from "../../img/keyword/chicken.jpg";
+import insta from "../../img/keyword/insta.jpg";
+import whatamisearching from "../../img/keyword/whatamisearching.jpg";
+import oldboy from "../../img/keyword/oldboy.jpg";
+import lensome from "../../img/keyword/lensome.jpg";
+import dengdeng from "../../img/keyword/dengdeng.jpg";
+import asmr from "../../img/keyword/asmr.jpg";
+import vlog from "../../img/keyword/vlog.png";
+// 80
+
+import army from "../../img/keyword/army.jpg";
+import samkukji from "../../img/keyword/samkukji.jpg";
+import citypop from "../../img/keyword/citypop.jpg";
+
 export let data = [
-  { url: drake, source: "Naver", name: "드레이크", count: 1610000 },
+  { url: drake, name: "드레이크", count: 1610000 },
   { url: bts, name: "방탄소년단", count: 92300000 },
   { url: firstman, name: "퍼스트 맨", count: 11100000 },
   { url: ryangosling, name: "라이언 고슬링", count: 703000 },
@@ -80,7 +101,7 @@ export let data = [
   { url: twitch, name: "트위치", count: 38400000 },
   { url: genesis, name: "창세기전", count: 1670000 },
   { url: youtube, name: "유튜브", count: 74900000 },
-  { url: django, name: "DJ 앙꼬", count: 2160000 },
+  { url: django, name: "장고", count: 2450000 },
   { url: naver, name: "네이버", count: 329000000 },
   { url: iu, name: "아이유", count: 46200000 },
   { url: bonestew, name: "뼈해장국", count: 1090000 },
@@ -88,10 +109,10 @@ export let data = [
   { url: punchguy, name: "여몽", count: 195000 },
   { url: jegal, name: "제갈량", count: 1280000 },
   { url: lol, name: "리그 오브 레전드", count: 80100000 },
-  { url: gta, name: "GTA", count: 242000000 },
+  { url: gta, name: "GTA", count: 22600000 },
   { url: iwai, name: "이와이 슌지", count: 143000 },
   { url: mudo, name: "무한도전", count: 20400000 },
-  { url: edm, name: "EDM", count: 97600000 },
+  { url: edm, name: "EDM", count: 4580000 },
   { url: boyhood, name: "보이후드", count: 3130000 },
   { url: hajungu, name: "사이코패스", count: 2970000 },
   { url: ppuyo, name: "뿌요뿌요", count: 986000 },
@@ -113,8 +134,8 @@ export let data = [
   { url: google, name: "구글", count: 128000000 },
   { url: timothee, name: "티모시 샬라메", count: 288000 },
   { url: avengers, name: "어벤져스", count: 10600000 },
-  { url: marvel, name: "MARVEL", count: 501000000 },
-  { url: dc, name: "DC", count: 2160000000 },
+  { url: marvel, name: "마블", count: 33200000 },
+  { url: dc, name: "디씨", count: 11100000 },
   { url: conjuring, name: "컨저링", count: 481000 },
   { url: zelda, name: "젤다", count: 3940000 },
   { url: camel, name: "타조", count: 3050000 },
@@ -134,5 +155,21 @@ export let data = [
   { url: exo, name: "엑소", count: 30500000 },
   { url: redricecake, name: "떡볶이", count: 25400000 },
   { url: apple, name: "애플", count: 50400000 },
-  { url: parkchanho, name: "박찬호", count: 4800000 }
+  { url: parkchanho, name: "박찬호", count: 4800000 },
+  { url: kukbbong, name: "국뽕", count: 2700000 },
+  { url: gabbunsa, name: "갑분싸", count: 2200000 },
+  { url: heize, name: "헤이즈", count: 3540000 },
+  { url: arifryer, name: "에어 프라이어", count: 5510000 },
+  { url: juperl, name: "주호민", count: 859000 },
+  { url: chicken, name: "치킨", count: 75500000 },
+  { url: insta, name: "인스타그램", count: 101000000 },
+  { url: whatamisearching, name: "뭐 검색하려고 했지", count: 1610000 },
+  { url: oldboy, name: "올드보이", count: 4860000 },
+  { url: lensome, name: "랜섬웨어", count: 1530000 },
+  { url: asmr, name: "ASMR", count: 6100000 },
+  { url: vlog, name: "VLOG", count: 6410000 },
+  { url: army, name: "군대", count: 15100000 },
+  { url: samkukji, name: "삼국지", count: 14800000 },
+  { url: dengdeng, name: "댕댕이", count: 17600000 },
+  { url: citypop, name: "시티 팝", count: 4080000 }
 ];
