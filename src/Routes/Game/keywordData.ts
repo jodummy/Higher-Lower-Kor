@@ -91,7 +91,7 @@ import postmalone from "../../img/keyword/postmalone.jpg";
 import bitcoin from "../../img/keyword/bitcoin.jpg";
 import tomandjerry from "../../img/keyword/tomandjerry.jpeg";
 import pablopicasso from "../../img/keyword/pablopicasso.jpg";
-import democracy from "../../img/keyword/postmalone.jpg";
+import democracy from "../../img/keyword/democracy.jpg";
 import baedona from "../../img/keyword/baedona.jpg";
 import aoiyu from "../../img/keyword/aoiyu.jpg";
 
@@ -106,7 +106,17 @@ import dota from "../../img/keyword/dota.jpg";
 import pokemon from "../../img/keyword/pokemon.jpg";
 import disney from "../../img/keyword/disney.jpg";
 // 100
-import hios from "../../img/keyword/disney.jpg";
+import hios from "../../img/keyword/hios.jpg";
+import webear from "../../img/keyword/webear.jpg";
+import starbucks from "../../img/keyword/starbucks.png";
+import straight from "../../img/keyword/straight.jpg";
+import japan from "../../img/keyword/japan.png";
+import blackpink from "../../img/keyword/blackpink.jpg";
+import wannaone from "../../img/keyword/wannaone.jpg";
+import hyukoh from "../../img/keyword/hyukoh.jpg";
+import kimjungen from "../../img/keyword/kimjungen.jpg";
+
+import moonjaein from "../../img/keyword/moonjaein.jpg";
 
 export let data = [
   { url: drake, category: "인물", name: "드레이크", count: 1610000 },
@@ -219,5 +229,14 @@ export let data = [
   { url: dota, name: "도타", count: 4240000 },
   { url: pokemon, name: "포켓몬스터", count: 42900000 },
   { url: disney, name: "CI즈LI", count: 24100000 },
-  { url: hios, name: "히어로즈 오브 더 스톰", count: 189000 }
+  { url: hios, name: "히어로즈 오브 더 스톰", count: 7570000 },
+  { url: webear, name: "위 베어 베어스", count: 818000 },
+  { url: starbucks, name: "스타벅스", count: 21200000 },
+  { url: straight, name: "전진", count: 9670000 },
+  { url: japan, name: "일본", count: 326000000 },
+  { url: blackpink, name: "블랙핑크", count: 99500000 },
+  { url: wannaone, name: "워너 원", count: 35400000 },
+  { url: hyukoh, name: "혁오", count: 1450000 },
+  { url: kimjungen, name: "김정은", count: 39700000 },
+  { url: moonjaein, name: "문재인", count: 45600000 }
 ];
