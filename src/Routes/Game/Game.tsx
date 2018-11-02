@@ -174,7 +174,7 @@ const Flipper = styled<IFlipperProps, any>("div")`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 40px;
+  font-size: 35px;
   font-weight: bolder;
   transition: 1s ease;
   transform-style: preserve-3d;
@@ -261,7 +261,7 @@ const KeywordTitle = styled.div`
   margin-bottom: 10px;
   transition: 1s ease;
   ${media.desktop`  
-  font-size: 40px;
+  font-size: 35px;
   `};
 `;
 

@@ -58,22 +58,20 @@ import seoul from "../../img/keyword/seoul.jpg";
 import korea from "../../img/keyword/korea.png";
 import broom from "../../img/keyword/broom.jpg";
 import son from "../../img/keyword/son.jpg";
+// 60
 import redeli from "../../img/keyword/redeli.jpg";
 import redvelbet from "../../img/keyword/redvelbet.jpg";
-
 import twice from "../../img/keyword/twice.jpg";
 import exo from "../../img/keyword/exo.png";
 import redricecake from "../../img/keyword/redricecake.jpg";
 import apple from "../../img/keyword/apple.jpg";
 import parkchanho from "../../img/keyword/parkchanho.jpg";
-
 import kukbbong from "../../img/keyword/kukbbong.jpg";
 import gabbunsa from "../../img/keyword/gabbunsa.jpg";
 import arifryer from "../../img/keyword/arifryer.jpg";
+// 70
 import heize from "../../img/keyword/heize.jpg";
 import juperl from "../../img/keyword/juperl.jpg";
-// 72
-
 import chicken from "../../img/keyword/chicken.jpg";
 import insta from "../../img/keyword/insta.jpg";
 import whatamisearching from "../../img/keyword/whatamisearching.jpg";
@@ -83,7 +81,6 @@ import dengdeng from "../../img/keyword/dengdeng.jpg";
 import asmr from "../../img/keyword/asmr.jpg";
 import vlog from "../../img/keyword/vlog.png";
 // 80
-
 import army from "../../img/keyword/army.jpg";
 import samkukji from "../../img/keyword/samkukji.jpg";
 import citypop from "../../img/keyword/citypop.jpg";
@@ -94,7 +91,7 @@ import pablopicasso from "../../img/keyword/pablopicasso.jpg";
 import democracy from "../../img/keyword/democracy.jpg";
 import baedona from "../../img/keyword/baedona.jpg";
 import aoiyu from "../../img/keyword/aoiyu.jpg";
-
+// 90
 import kimhaeja from "../../img/keyword/kimhaeja.png";
 import chusunghune from "../../img/keyword/chusunghune.jpg";
 import yoojaesuk from "../../img/keyword/yoojaesuk.jpg";
@@ -115,8 +112,30 @@ import blackpink from "../../img/keyword/blackpink.jpg";
 import wannaone from "../../img/keyword/wannaone.jpg";
 import hyukoh from "../../img/keyword/hyukoh.jpg";
 import kimjungen from "../../img/keyword/kimjungen.jpg";
-
 import moonjaein from "../../img/keyword/moonjaein.jpg";
+// 110
+import kimhaesu from "../../img/keyword/kimhaesu.jpg";
+import kimtaeri from "../../img/keyword/kimtaeri.jpg";
+import parkboyoung from "../../img/keyword/parkboyoung.png";
+import suhyounjin from "../../img/keyword/suhyounjin.jpg";
+import ppap from "../../img/keyword/ppap.jpg";
+import tropicana from "../../img/keyword/tropicana.jpg";
+import happynaru from "../../img/keyword/happynaru.jpg";
+import onepiece from "../../img/keyword/onepiece.jpg";
+import naruto from "../../img/keyword/naruto.png";
+import suyougi from "../../img/keyword/suyougi.jpg";
+// 120
+import lineage from "../../img/keyword/lineage.jpg";
+import moongha from "../../img/keyword/moongha.gif";
+import yeegha from "../../img/keyword/yeegha.gif";
+import backjongwon from "../../img/keyword/backjongwon.jpg";
+import kimhechul from "../../img/keyword/kimhechul.jpeg";
+import weather from "../../img/keyword/weather.jpg";
+import monday from "../../img/keyword/monday.jpg";
+import gaegang from "../../img/keyword/gaegang.jpg";
+import watch from "../../img/keyword/watch.jpg";
+import wallet from "../../img/keyword/wallet.jpg";
+// 130
 
 export let data = [
   { url: drake, category: "인물", name: "드레이크", count: 1610000 },
@@ -238,5 +257,27 @@ export let data = [
   { url: wannaone, name: "워너 원", count: 35400000 },
   { url: hyukoh, name: "혁오", count: 1450000 },
   { url: kimjungen, name: "김정은", count: 39700000 },
-  { url: moonjaein, name: "문재인", count: 45600000 }
+  { url: moonjaein, name: "문재인", count: 45600000 },
+
+  { url: kimhaesu, name: "김혜수", count: 3680000 },
+  { url: kimtaeri, name: "김태리", count: 6460000 },
+  { url: parkboyoung, name: "박보영", count: 7970000 },
+  { url: suhyounjin, name: "서현진", count: 7940000 },
+  { url: ppap, name: "PPAP", count: 805000 },
+  { url: tropicana, name: "트로피카나", count: 508000 },
+  { url: happynaru, name: "해피나루", count: 756000 },
+  { url: onepiece, name: "원피스", count: 63100000 },
+  { url: naruto, name: "나루토", count: 11800000 },
+  { url: suyougi, name: "서유기", count: 9470000 },
+
+  { url: lineage, name: "리니지", count: 9470000 },
+  { url: moongha, name: "문과", count: 9810000 },
+  { url: yeegha, name: "이과", count: 6480000 },
+  { url: backjongwon, name: "백종원", count: 28200000 },
+  { url: kimhechul, name: "오타쿠", count: 5690000 },
+  { url: weather, name: "날씨", count: 108000000 },
+  { url: monday, name: "월요일", count: 48900000 },
+  { url: gaegang, name: "개강", count: 9890000 },
+  { url: watch, name: "시계", count: 66600000 },
+  { url: wallet, name: "지갑", count: 38800000 }
 ];

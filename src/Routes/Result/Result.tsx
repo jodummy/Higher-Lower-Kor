@@ -39,7 +39,7 @@ const ResultContainer = styled<IResultContainerProps, any>("div")`
 `;
 
 const ResultTitle = styled.div`
-  font-size: 40px;
+  font-size: 35px;
   margin-bottom: 10px;
   transition: 1s ease;
   ${media.desktop`
@@ -90,23 +90,6 @@ const ButtonContainer = styled.div`
   align-items: center;
   justify-content: space-between;
 `;
-
-// const ShareButton = styled.div`
-//   width: 80px;
-//   height: 40px;
-//   font-size: 15px;
-//   padding: 5px 15px;
-//   border-radius: 10px;
-//   margin: 15px 0;
-//   transition: 0.2s ease;
-//   display: flex;
-//   align-items: center;
-//   justify-content: space-between;
-//   cursor: pointer;
-//   &:hover {
-//     box-shadow: 0px 5px 0px rgba(0, 0, 0, 1);
-//   }
-// `;
 
 const RetryButton = styled.div`
   font-size: 20px;

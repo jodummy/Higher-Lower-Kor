@@ -27,7 +27,7 @@ const HomeContainer = styled.div`
 
 const MainTitleImgContainer = styled.div`
   display: flex;
-  font-size: 40px;
+  font-size: 35px;
   transition: 1s ease;
   ${media.desktop`  
   font-size: 25px;
@@ -66,7 +66,7 @@ const MainTitleImg = styled<IMainTitleImg, any>("img")`
   ${media.desktop`  
   
   width: 100px;
-  height: 60px;
+  height: 55px;
   margin: 0px 5px 15px;
   `};
 `;
@@ -95,10 +95,10 @@ const ExplainSubtitle = styled.div`
 
 const ExplainAdditional = styled.div`
   opacity: 0.5;
-  font-size: 12px;
+  font-size: 15px;
   transition: 1s ease;
   ${media.desktop`  
-    font-size: 10px;
+    font-size: 12px;
   `};
 `;
 
@@ -140,9 +140,9 @@ const SuggestionButton = styled.div`
     }
   }
   transition: 1s ease;
+  font-size: 15px;
   ${media.desktop`  
-    font-size: 10px;
-
+    font-size: 12px;
   `};
 `;
 
