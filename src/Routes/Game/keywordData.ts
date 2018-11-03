@@ -258,7 +258,6 @@ export let data = [
   { url: hyukoh, name: "혁오", count: 1450000 },
   { url: kimjungen, name: "김정은", count: 39700000 },
   { url: moonjaein, name: "문재인", count: 45600000 },
-
   { url: kimhaesu, name: "김혜수", count: 3680000 },
   { url: kimtaeri, name: "김태리", count: 6460000 },
   { url: parkboyoung, name: "박보영", count: 7970000 },
@@ -269,7 +268,6 @@ export let data = [
   { url: onepiece, name: "원피스", count: 63100000 },
   { url: naruto, name: "나루토", count: 11800000 },
   { url: suyougi, name: "서유기", count: 9470000 },
-
   { url: lineage, name: "리니지", count: 9470000 },
   { url: moongha, name: "문과", count: 9810000 },
   { url: yeegha, name: "이과", count: 6480000 },
