@@ -136,6 +136,30 @@ import gaegang from "../../img/keyword/gaegang.jpg";
 import watch from "../../img/keyword/watch.jpg";
 import wallet from "../../img/keyword/wallet.jpg";
 // 130
+import magumagu from "../../img/keyword/magumagu.jpg";
+import parkwonsun from "../../img/keyword/parkwonsun.jpg";
+import undertale from "../../img/keyword/undertale.png";
+import queen from "../../img/keyword/queen.png";
+import jangi from "../../img/keyword/jangi.jpg";
+import zzangu from "../../img/keyword/zzangu.jpg";
+import lego from "../../img/keyword/lego.jpg";
+import parkchanwuk from "../../img/keyword/parkchanwuk.jpg";
+import bongjuneho from "../../img/keyword/bongjuneho.jpg";
+import kemono from "../../img/keyword/kemono.jpg";
+// 140
+import eminam from "../../img/keyword/eminam.jpg";
+import dental from "../../img/keyword/dental.jpg";
+import magic from "../../img/keyword/magic.jpg";
+import riddle from "../../img/keyword/riddle.png";
+import grammer from "../../img/keyword/grammer.png";
+import gift from "../../img/keyword/gift.jpg";
+import youbi from "../../img/keyword/youbi.jpg";
+import jojo from "../../img/keyword/jojo.jpg";
+import gorani from "../../img/keyword/gorani.jpg";
+import mosquito from "../../img/keyword/mosquito.jpg";
+// 150
+import stonia from "../../img/keyword/stonia.jpg";
+import flute from "../../img/keyword/flute.jpg";
 
 export let data = [
   { url: drake, category: "인물", name: "드레이크", count: 1610000 },
@@ -277,5 +301,28 @@ export let data = [
   { url: monday, name: "월요일", count: 48900000 },
   { url: gaegang, name: "개강", count: 9890000 },
   { url: watch, name: "시계", count: 66600000 },
-  { url: wallet, name: "지갑", count: 38800000 }
+  { url: wallet, name: "지갑", count: 38800000 },
+
+  { url: magumagu, name: "마구마구", count: 15800000 },
+  { url: parkwonsun, name: "박원순", count: 12400000 },
+  { url: undertale, name: "언더테일", count: 3850000 },
+  { url: queen, name: "퀸", count: 58700000 },
+  { url: jangi, name: "장기", count: 55400000 },
+  { url: zzangu, name: "짱구는 못말려", count: 3250000 },
+  { url: lego, name: "레고", count: 17700000 },
+  { url: parkchanwuk, name: "박찬욱", count: 1790000 },
+  { url: bongjuneho, name: "봉준호", count: 2000000 },
+  { url: kemono, name: "케모노 프렌즈", count: 1790000 },
+  { url: eminam, name: "에미넴", count: 1950000 },
+  { url: dental, name: "치과", count: 29100000 },
+  { url: magic, name: "마술", count: 21200000 },
+  { url: riddle, name: "수수께끼", count: 7170000 },
+  { url: grammer, name: "맞춤법", count: 15600000 },
+  { url: gift, name: "선물", count: 273000000 },
+  { url: youbi, name: "유비", count: 10700000 },
+  { url: jojo, name: "조조", count: 7840000 },
+  { url: gorani, name: "고라니", count: 4440000 },
+  { url: mosquito, name: "모기", count: 19000000 },
+  { url: stonia, name: "에스토니아", count: 6490000 },
+  { url: flute, name: "플룻", count: 1950000 }
 ];
