@@ -96,7 +96,7 @@ import kimhaeja from "../../img/keyword/kimhaeja.png";
 import chusunghune from "../../img/keyword/chusunghune.jpg";
 import yoojaesuk from "../../img/keyword/yoojaesuk.jpg";
 import ganghodong from "../../img/keyword/ganghodong.jpg";
-import leebeunghun from "../../img/keyword/leebeunghun.gif";
+import leebeunghun from "../../img/keyword/leebeunghun.jpeg";
 import samsung from "../../img/keyword/samsung.png";
 import alphago from "../../img/keyword/alphago.jpg";
 import dota from "../../img/keyword/dota.jpg";
@@ -126,8 +126,8 @@ import naruto from "../../img/keyword/naruto.png";
 import suyougi from "../../img/keyword/suyougi.jpg";
 // 120
 import lineage from "../../img/keyword/lineage.jpg";
-import moongha from "../../img/keyword/moongha.gif";
-import yeegha from "../../img/keyword/yeegha.gif";
+import moongha from "../../img/keyword/moongha.jpg";
+import yeegha from "../../img/keyword/yeegha.jpg";
 import backjongwon from "../../img/keyword/backjongwon.jpg";
 import kimhechul from "../../img/keyword/kimhechul.jpeg";
 import weather from "../../img/keyword/weather.jpg";
@@ -160,6 +160,17 @@ import mosquito from "../../img/keyword/mosquito.jpg";
 // 150
 import stonia from "../../img/keyword/stonia.jpg";
 import flute from "../../img/keyword/flute.jpg";
+import kingsaejong from "../../img/keyword/kingsaejong.png";
+import kimchi from "../../img/keyword/kimchi.jpg";
+import hiphop from "../../img/keyword/hiphop.jpg";
+import ghost from "../../img/keyword/ghost.jpeg";
+import hanwhaeagles from "../../img/keyword/hanwha eagles.png";
+import stock from "../../img/keyword/stock.jpg";
+import foo from "../../img/keyword/foo.jpg";
+import space from "../../img/keyword/space.jpg";
+// 160
+
+import window from "../../img/keyword/window.png";
 
 export let data = [
   { url: drake, category: "인물", name: "드레이크", count: 1610000 },
@@ -324,5 +335,14 @@ export let data = [
   { url: gorani, name: "고라니", count: 4440000 },
   { url: mosquito, name: "모기", count: 19000000 },
   { url: stonia, name: "에스토니아", count: 6490000 },
-  { url: flute, name: "플룻", count: 1950000 }
+  { url: flute, name: "플룻", count: 1950000 },
+  { url: kingsaejong, name: "세종대왕", count: 4320000 },
+  { url: kimchi, name: "김치", count: 46200000 },
+  { url: hiphop, name: "힙합", count: 20500000 },
+  { url: ghost, name: "귀신", count: 22000000 },
+  { url: hanwhaeagles, name: "한화 이글스", count: 11300000 },
+  { url: stock, name: "주식", count: 53300000 },
+  { url: foo, name: "똥", count: 32300000 },
+  { url: space, name: "우주", count: 1950000 },
+  { url: window, name: "윈도우", count: 17500000 }
 ];
