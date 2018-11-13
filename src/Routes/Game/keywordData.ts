@@ -164,7 +164,7 @@ import kingsaejong from "../../img/keyword/kingsaejong.png";
 import kimchi from "../../img/keyword/kimchi.jpg";
 import hiphop from "../../img/keyword/hiphop.jpg";
 import ghost from "../../img/keyword/ghost.jpeg";
-import hanwhaeagles from "../../img/keyword/hanwha eagles.png";
+import hanwhaeagles from "../../img/keyword/hanwhaeagles.png";
 import stock from "../../img/keyword/stock.jpg";
 import foo from "../../img/keyword/foo.jpg";
 import space from "../../img/keyword/space.jpg";
