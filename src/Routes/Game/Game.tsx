@@ -10,7 +10,6 @@ interface IGameContainerProps {
 
 const GameContainer = styled<IGameContainerProps, any>("div")`
   position: absolute;
-  top: 60px;
   width: 150%;
   height: 100%;
   display: flex;
