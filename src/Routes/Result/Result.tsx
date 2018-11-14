@@ -184,7 +184,6 @@ class Result extends React.Component<IProps, any> {
           data-ad-client="ca-pub-9994255438328666"
           data-ad-slot="2297036333"
           data-ad-format="auto"
-          data-full-width-responsive="true"
         />
         <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
         <script
