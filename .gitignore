@@ -3,6 +3,8 @@
 # dependencies
 /node_modules
 
+/public/google05744f4bd595a9ad.html
+
 # testing
 /coverage
 
