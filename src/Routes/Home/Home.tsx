@@ -165,7 +165,7 @@ class Home extends React.Component<any, any> {
         <Link to={"/game"}>
           <StartButton>게임 시작!</StartButton>
         </Link>
-        {/* <script
+        <script
           async={true}
           src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
         />
@@ -190,7 +190,7 @@ class Home extends React.Component<any, any> {
           data-ad-format="link"
           data-full-width-responsive="true"
         />
-        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> */}
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
         <SuggestionButton
           onClick={() =>
             window.open(
