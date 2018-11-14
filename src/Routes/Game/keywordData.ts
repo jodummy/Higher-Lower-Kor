@@ -169,8 +169,39 @@ import stock from "../../img/keyword/stock.jpg";
 import foo from "../../img/keyword/foo.jpg";
 import space from "../../img/keyword/space.jpg";
 // 160
-
 import window from "../../img/keyword/window.png";
+import wakgood from "../../img/keyword/wakgood.jpg";
+import hyperguy from "../../img/keyword/hyperguy.jpg";
+import kong from "../../img/keyword/kong.jpg";
+import sambahong from "../../img/keyword/sambahong.jpg";
+import university from "../../img/keyword/university.jpg";
+import smartphone from "../../img/keyword/smartphone.jpg";
+import lostark from "../../img/keyword/lostark.png";
+import darksoul from "../../img/keyword/darksoul.jpg";
+import dinosoar from "../../img/keyword/dinosoar.jpg";
+// 170
+import moon from "../../img/keyword/moon.jpg";
+import limyohan from "../../img/keyword/limyohan.jpg";
+import beatles from "../../img/keyword/beatles.jpg";
+import songhae from "../../img/keyword/songhae.png";
+import fourdallor from "../../img/keyword/fourdallor.png";
+import cyworld from "../../img/keyword/cyworld.jpg";
+import facebook from "../../img/keyword/facebook.png";
+import matzip from "../../img/keyword/matzip.jpg";
+import soju from "../../img/keyword/soju.jpg";
+import lottelia from "../../img/keyword/lottelia.jpg";
+// 180
+import ysl from "../../img/keyword/ysl.png";
+import prada from "../../img/keyword/prada.jpeg";
+import hermes from "../../img/keyword/hermes.png";
+import ena from "../../img/keyword/ena.jpg";
+import leejaeyong from "../../img/keyword/leejaeyong.jpg";
+import netflix from "../../img/keyword/netflix.jpeg";
+import cat from "../../img/keyword/cat.png";
+import agro from "../../img/keyword/agro.jpg";
+import beer from "../../img/keyword/beer.jpeg";
+import madongsuk from "../../img/keyword/madongsuk.jpg";
+// 190
 
 export let data = [
   { url: drake, category: "인물", name: "드레이크", count: 1610000 },
@@ -343,6 +374,35 @@ export let data = [
   { url: hanwhaeagles, name: "한화 이글스", count: 11300000 },
   { url: stock, name: "주식", count: 53300000 },
   { url: foo, name: "똥", count: 32300000 },
-  { url: space, name: "우주", count: 1950000 },
-  { url: window, name: "윈도우", count: 17500000 }
+  { url: space, name: "우주", count: 56700000 },
+  { url: window, name: "윈도우", count: 17500000 },
+  { url: wakgood, name: "우왁굳", count: 2310000 },
+  { url: hyperguy, name: "전용준", count: 1600000 },
+  { url: kong, name: "홍진호", count: 1690000 },
+  { url: sambahong, name: "홍진영", count: 10200000 },
+  { url: university, name: "대학교", count: 192000000 },
+  { url: smartphone, name: "스마트폰", count: 146000000 },
+  { url: lostark, name: "로스트아크", count: 59100000 },
+  { url: darksoul, name: "다크소울", count: 20500000 },
+  { url: dinosoar, name: "공룡", count: 21900000 },
+  { url: moon, name: "달", count: 161000000 },
+  { url: limyohan, name: "임요환", count: 1490000 },
+  { url: beatles, name: "비틀즈", count: 5140000 },
+  { url: songhae, name: "송해", count: 3460000 },
+  { url: fourdallor, name: "4달러", count: 56900000 },
+  { url: cyworld, name: "싸이월드", count: 19900000 },
+  { url: facebook, name: "페이스북", count: 431000000 },
+  { url: matzip, name: "맛집", count: 114000000 },
+  { url: beer, name: "맥주", count: 64300000 },
+  { url: soju, name: "소주", count: 30800000 },
+  { url: lottelia, name: "롯데리아", count: 6070000 },
+  { url: ysl, name: "입생로랑", count: 6030000 },
+  { url: prada, name: "프라다", count: 8480000 },
+  { url: hermes, name: "에르메스", count: 4530000 },
+  { url: ena, name: "김이나", count: 54200000 },
+  { url: leejaeyong, name: "이재용", count: 6420000 },
+  { url: netflix, name: "넷플릭스", count: 7630000 },
+  { url: cat, name: "떼껄룩", count: 965000 },
+  { url: agro, name: "어그로", count: 19800000 },
+  { url: madongsuk, name: "마동석", count: 6730000 }
 ];
