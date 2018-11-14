@@ -7,7 +7,7 @@ import { media } from "src/config/_mixin";
 
 const HomeContainer = styled.div`
   position: absolute;
-  top: 0;
+  top: 60px;
   bottom: 0;
   right: 0;
   left: 0;
