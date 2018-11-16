@@ -7,15 +7,21 @@
 
 두 검색어 중 구글에 검색이 더 많이 된 것은 어떤 쪽일까요?
 
-`검색량은 2018년 10월 기준, 영어 검색어는 한국어 웹 기준`
+`검색량은 2018년 11월 기준, 영어 검색어는 한국어 웹 기준`
 
 ## 결과 등급 분류
 
-- 0 ~ 3 개
-- 3 ~ 7 개
-- 7 ~ 12 개
-- 12 ~ 18 개
-- 18 ~ 25 개
-- 25 ~
+- 0 ~ 6 개
+- 6 ~ 13 개
+- 13 ~ 21 개
+- 21 ~ 29 개
+- 29 ~ 38 개
+- 38 ~
+
+많은 스트리머 분들이 즐겨주셨습니다.
+
+침착맨 : https://www.youtube.com/watch?v=TZK4phbaQYw
+풍월량 : https://www.youtube.com/watch?v=gIvDBhlr2H4
+우왁굳 : https://www.youtube.com/watch?v=mAdbVb70nNE
 
 참조 : http://www.higherlowergame.com/
