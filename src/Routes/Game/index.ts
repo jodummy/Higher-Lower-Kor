@@ -1,2 +1,2 @@
-import Game from "./Game";
-export default Game;
+import GameContainer from "./GameContainer";
+export default GameContainer;

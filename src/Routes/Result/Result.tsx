@@ -174,7 +174,7 @@ class Result extends React.Component<IProps, any> {
     const { score } = this.props.location.state;
     return (
       <ResultContainer url={url}>
-        {/* <script
+        <script
           async={true}
           src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
         />
@@ -198,7 +198,7 @@ class Result extends React.Component<IProps, any> {
           data-ad-format="link"
           data-full-width-responsive="true"
         />
-        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> */}
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
         <ResultTitle>당신의 점수는</ResultTitle>
         <Score>{score}점</Score>
         <ResultSubtitle>{message}</ResultSubtitle>

@@ -4,10 +4,11 @@ import { Link } from "react-router-dom";
 import higher from "../../img/logo/higher.png";
 import lower from "../../img/logo/lower.png";
 import { media } from "src/config/_mixin";
+import { Icon, Tooltip } from "antd";
 
 const HomeContainer = styled.div`
   position: absolute;
-  top: 60px;
+  top: 0;
   bottom: 0;
   right: 0;
   left: 0;
@@ -146,10 +147,25 @@ const SuggestionButton = styled.div`
   `};
 `;
 
-class Home extends React.Component<any, any> {
+class Home extends React.Component {
   public render() {
     return (
       <HomeContainer>
+        <Tooltip
+          placement="bottomRight"
+          title={"크롬 브라우저를 사용하셔야 정상적으로 게임이 진행됩니다."}
+        >
+          <Icon
+            type="exclamation-circle"
+            style={{
+              fontSize: 30,
+              position: "absolute",
+              right: 20,
+              top: 20
+            }}
+          />
+        </Tooltip>
+
         <MainTitleImgContainer>
           <MainTitleImg dir={"UP"} src={higher} />
           <MainTitleImg dir={"DOWN"} src={lower} />
@@ -160,7 +176,7 @@ class Home extends React.Component<any, any> {
         </ExplainSubtitle>
         <ExplainAdditional>
           {" "}
-          * 자료는 2018년 10월 기준, 영어 검색어는 한국어 웹 기준
+          * 모든 검색량은 구글 한국어 웹에서의 2018년 11월 한 달 기준입니다. *
         </ExplainAdditional>
         <Link to={"/game"}>
           <StartButton>게임 시작!</StartButton>
