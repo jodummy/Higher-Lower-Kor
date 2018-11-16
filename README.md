@@ -20,8 +20,10 @@
 
 많은 스트리머 분들이 즐겨주셨습니다.
 
-침착맨 : https://www.youtube.com/watch?v=TZK4phbaQYw
+침착맨 : https://www.youtube.com/watch?v=TZK4phbaQYw 
+
 풍월량 : https://www.youtube.com/watch?v=gIvDBhlr2H4
+
 우왁굳 : https://www.youtube.com/watch?v=mAdbVb70nNE
 
 참조 : http://www.higherlowergame.com/
