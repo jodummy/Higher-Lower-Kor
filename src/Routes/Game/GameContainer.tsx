@@ -89,8 +89,6 @@ class Game extends React.PureComponent<IProps, IState> {
                 answerClick={answerClick}
                 state={state}
                 onClickAnswer={this.onClickAnswer}
-                rightAnswer={this.rightAnswer}
-                wrongAnswer={this.wrongAnswer}
               />
             </>
           );

@@ -15,16 +15,26 @@ import { media } from "src/config/_mixin";
 
 import F1 from "../../img/grade/F1.gif";
 import F2 from "../../img/grade/F2.gif";
+import F3 from "../../img/grade/F3.gif";
+import F4 from "../../img/grade/F4.gif";
 import E1 from "../../img/grade/E1.gif";
 import E2 from "../../img/grade/E2.gif";
+import E3 from "../../img/grade/E3.gif";
+import E4 from "../../img/grade/E4.gif";
 import D1 from "../../img/grade/D1.gif";
 import D2 from "../../img/grade/D2.gif";
+import D3 from "../../img/grade/D3.gif";
+import D4 from "../../img/grade/D4.gif";
 import C1 from "../../img/grade/C1.gif";
 import C2 from "../../img/grade/C2.gif";
 import B1 from "../../img/grade/B1.gif";
 import B2 from "../../img/grade/B2.gif";
 import A1 from "../../img/grade/A1.gif";
 import A2 from "../../img/grade/A2.gif";
+import A3 from "../../img/grade/A3.gif";
+import A4 from "../../img/grade/A4.gif";
+import S1 from "../../img/grade/S1.gif";
+import S2 from "../../img/grade/S2.gif";
 
 interface IResultContainerProps {
   url: string;
@@ -147,24 +157,53 @@ class Result extends React.Component<IProps, any> {
     const { score } = this.props.location.state;
     this.state = {};
     if (score <= 0) {
-      url = Math.random() > 0.5 ? F1 : F2;
+      url =
+        Math.random() > 0.5
+          ? Math.random() > 0.5
+            ? F1
+            : F2
+          : Math.random() > 0.5
+          ? F3
+          : F4;
       message = "네? 잘못 누른거죠?";
-    } else if (score <= 3) {
-      (url = Math.random() > 0.5 ? E1 : E2),
+    } else if (score <= 5) {
+      (url =
+        Math.random() > 0.5
+          ? Math.random() > 0.5
+            ? E1
+            : E2
+          : Math.random() > 0.5
+          ? E3
+          : E4),
         (message = "못 본 걸로 할게요. 평균은 넘겨보자고요");
-    } else if (score <= 7) {
-      (url = Math.random() > 0.5 ? D1 : D2), (message = "괜찮은 점수네요");
-    } else if (score <= 12) {
+    } else if (score <= 11) {
+      (url =
+        Math.random() > 0.5
+          ? Math.random() > 0.5
+            ? D1
+            : D2
+          : Math.random() > 0.5
+          ? D3
+          : D4),
+        (message = "괜찮은 점수네요");
+    } else if (score <= 19) {
       (url = Math.random() > 0.5 ? C1 : C2),
         (message = "네이버보다 구글을 많이 쓰시는 타입?");
-    } else if (score <= 18) {
+    } else if (score <= 27) {
       (url = Math.random() > 0.5 ? B1 : B2),
         (message = "구글링의 달인이시네요!");
-    } else if (score <= 25) {
-      (url = Math.random() > 0.5 ? A1 : A2),
+    } else if (score <= 36) {
+      (url =
+        Math.random() > 0.5
+          ? Math.random() > 0.5
+            ? A1
+            : A2
+          : Math.random() > 0.5
+          ? A3
+          : A4),
         (message = `대단해요! 인터넷 짬밥 좀 드셨군요!`);
-    } else if (score <= 160) {
-      (url = Math.random() > 0.5 ? A1 : A2),
+    } else if (score <= 190) {
+      (url = Math.random() > 0.5 ? S1 : S2),
         (message = `대단해요! 인터넷 짬밥 좀 드셨군요!`);
     }
   }
@@ -174,35 +213,10 @@ class Result extends React.Component<IProps, any> {
     const { score } = this.props.location.state;
     return (
       <ResultContainer url={url}>
-        <script
-          async={true}
-          src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-        />
-        <ins
-          className="adsbygoogle"
-          style={{ display: "block" }}
-          data-ad-client="ca-pub-9994255438328666"
-          data-ad-slot="2297036333"
-          data-ad-format="auto"
-        />
-        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-        <script
-          async={true}
-          src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-        />
-        <ins
-          className="adsbygoogle"
-          style={{ display: "block" }}
-          data-ad-client="ca-pub-9994255438328666"
-          data-ad-slot="8939424166"
-          data-ad-format="link"
-          data-full-width-responsive="true"
-        />
-        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
         <ResultTitle>당신의 점수는</ResultTitle>
         <Score>{score}점</Score>
         <ResultSubtitle>{message}</ResultSubtitle>
-        <Info>* 유저 평균 3.2점</Info>
+        <Info>* 유저 평균 5.2점</Info>
         <SocialContainer>
           <FacebookShareButton url={"https://higherlowerkorea.com"}>
             <FacebookIcon

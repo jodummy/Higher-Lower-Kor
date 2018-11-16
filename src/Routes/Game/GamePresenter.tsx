@@ -359,8 +359,6 @@ const AnswerButton = styled.div`
 
 interface IProps {
   onClickAnswer: any;
-  rightAnswer: any;
-  wrongAnswer: any;
   keywords: any;
   highScore: number;
   currentScore: number;
