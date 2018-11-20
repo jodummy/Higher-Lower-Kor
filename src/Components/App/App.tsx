@@ -3,6 +3,7 @@ import Game from "../../Routes/Game";
 import Home from "../../Routes/Home";
 // import Fix from "../../Routes/Fix";
 import Result from "../../Routes/Result";
+import Advertisement from "../Advertisement";
 import { GlobalStyle } from "../../global-styles";
 import { Switch, Route } from "react-router";
 import { ApolloProvider } from "react-apollo";
@@ -15,13 +16,6 @@ const AppContainer = styled.div`
   bottom: 0;
   right: 0;
   left: 0;
-`;
-
-const Advertisement = styled.div`
-  position: relative;
-  height: 10%;
-  background-color: goldenrod;
-  z-index: 10;
 `;
 
 const RealAppContainer = styled.div`
