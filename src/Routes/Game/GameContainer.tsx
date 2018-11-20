@@ -1,7 +1,7 @@
 import React from "react";
-import { Query } from "react-apollo";
+import { Query, Mutation } from "react-apollo";
 // import { data } from "./keywordData";
-import { KEYWORDS } from "./GameQueries";
+import { KEYWORDS, CREATE_RESULT } from "./GameQueries";
 import GamePresenter from "./GamePresenter";
 // const correct = new Audio("../../sound/correct.wav");
 // const wrong = new Audio("../../sound/wrong.mp3");
@@ -76,21 +76,28 @@ class Game extends React.PureComponent<IProps, IState> {
           if (error) return "Error";
           const keywordData = data.keywords;
           return (
-            <>
-              <GamePresenter
-                keywords={[
-                  keywordData[shuffledArray[index]],
-                  keywordData[shuffledArray[index + 1]],
-                  keywordData[shuffledArray[index + 2]]
-                ]}
-                highScore={highScore}
-                currentScore={currentScore}
-                answerResult={answerResult}
-                answerClick={answerClick}
-                state={state}
-                onClickAnswer={this.onClickAnswer}
-              />
-            </>
+            <Mutation mutation={CREATE_RESULT}>
+              {createResult => {
+                return (
+                  <>
+                    <GamePresenter
+                      keywords={[
+                        keywordData[shuffledArray[index]],
+                        keywordData[shuffledArray[index + 1]],
+                        keywordData[shuffledArray[index + 2]]
+                      ]}
+                      highScore={highScore}
+                      currentScore={currentScore}
+                      answerResult={answerResult}
+                      answerClick={answerClick}
+                      state={state}
+                      onClickAnswer={this.onClickAnswer}
+                      createResult={createResult}
+                    />
+                  </>
+                );
+              }}
+            </Mutation>
           );
         }}
       </Query>
@@ -108,7 +115,7 @@ class Game extends React.PureComponent<IProps, IState> {
     }, 1000);
   };
 
-  public onClickAnswer = (right: boolean) => {
+  public onClickAnswer = (right: boolean, createResult: any) => {
     this.setState({
       answerClick: true,
       state: "CLICKANSWER"
@@ -121,7 +128,7 @@ class Game extends React.PureComponent<IProps, IState> {
     } else {
       setTimeout(() => {
         this.setState({ state: "ANSWERRESULT", answerResult: "WRONG" });
-        this.wrongAnswer();
+        this.wrongAnswer(createResult);
       }, 2000);
     }
   };
@@ -137,7 +144,7 @@ class Game extends React.PureComponent<IProps, IState> {
     }, 1000);
   };
 
-  public wrongAnswer = () => {
+  public wrongAnswer = (createResult: any) => {
     // wrong.play();
     setTimeout(() => {
       localStorage.getItem("higherlowerkorhighscore")
@@ -152,6 +159,7 @@ class Game extends React.PureComponent<IProps, IState> {
             "higherlowerkorhighscore",
             this.state.currentScore.toString()
           );
+      createResult({ variables: { score: this.state.currentScore } });
       this.props.history.push({
         pathname: `/result`,
         state: {

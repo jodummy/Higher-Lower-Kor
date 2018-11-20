@@ -175,7 +175,7 @@ class Result extends React.Component<IProps, any> {
           : Math.random() > 0.5
           ? E3
           : E4),
-        (message = "못 본 걸로 할게요. 평균은 넘겨보자고요");
+        (message = "못 본 걸로 할게요. 평균은 넘겨보자고요.");
     } else if (score <= 11) {
       (url =
         Math.random() > 0.5
@@ -185,10 +185,10 @@ class Result extends React.Component<IProps, any> {
           : Math.random() > 0.5
           ? D3
           : D4),
-        (message = "괜찮은 점수네요");
+        (message = "괜찮은 점수네요.");
     } else if (score <= 19) {
       (url = Math.random() > 0.5 ? C1 : C2),
-        (message = "네이버보다 구글을 많이 쓰시는 타입?");
+        (message = "네이버보다 구글을 많이 쓰시는 타입이시네요.");
     } else if (score <= 27) {
       (url = Math.random() > 0.5 ? B1 : B2),
         (message = "구글링의 달인이시네요!");
@@ -203,8 +203,7 @@ class Result extends React.Component<IProps, any> {
           : A4),
         (message = `대단해요! 인터넷 짬밥 좀 드셨군요!`);
     } else if (score <= 190) {
-      (url = Math.random() > 0.5 ? S1 : S2),
-        (message = `대단해요! 인터넷 짬밥 좀 드셨군요!`);
+      (url = Math.random() > 0.5 ? S1 : S2), (message = `신기록! 대단합니다!`);
     }
   }
 
@@ -216,7 +215,10 @@ class Result extends React.Component<IProps, any> {
         <ResultTitle>당신의 점수는</ResultTitle>
         <Score>{score}점</Score>
         <ResultSubtitle>{message}</ResultSubtitle>
-        <Info>* 유저 평균 5.2점</Info>
+        <Info>* 유저 평균 5.2점 *</Info>
+        <Info style={{ margin: 10, opacity: 1 }}>
+          게임이 재미있었다면 공유해주세요 ▼
+        </Info>
         <SocialContainer>
           <FacebookShareButton url={"https://higherlowerkorea.com"}>
             <FacebookIcon

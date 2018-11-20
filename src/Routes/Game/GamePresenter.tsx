@@ -365,6 +365,7 @@ interface IProps {
   answerResult: any;
   answerClick: boolean;
   state: any;
+  createResult: any;
 }
 
 class GamePresenter extends React.PureComponent<IProps, {}> {
@@ -380,7 +381,8 @@ class GamePresenter extends React.PureComponent<IProps, {}> {
       currentScore,
       answerResult,
       answerClick,
-      state
+      state,
+      createResult
     } = this.props;
     return (
       <GameContainer>
@@ -427,7 +429,8 @@ class GamePresenter extends React.PureComponent<IProps, {}> {
                           <AnswerButton
                             onClick={() =>
                               onClickAnswer(
-                                keywords[0].count <= keywords[1].count
+                                keywords[0].count <= keywords[1].count,
+                                createResult
                               )
                             }
                           >
@@ -437,7 +440,8 @@ class GamePresenter extends React.PureComponent<IProps, {}> {
                           <AnswerButton
                             onClick={() => {
                               onClickAnswer(
-                                keywords[0].count > keywords[1].count
+                                keywords[0].count > keywords[1].count,
+                                createResult
                               );
                             }}
                           >
@@ -476,7 +480,10 @@ class GamePresenter extends React.PureComponent<IProps, {}> {
                     <ButtonContainer>
                       <AnswerButton
                         onClick={() =>
-                          onClickAnswer(keywords[0].count <= keywords[1].count)
+                          onClickAnswer(
+                            keywords[0].count <= keywords[1].count,
+                            createResult
+                          )
                         }
                       >
                         <span>더 많이</span>{" "}
@@ -484,7 +491,10 @@ class GamePresenter extends React.PureComponent<IProps, {}> {
                       </AnswerButton>
                       <AnswerButton
                         onClick={() =>
-                          onClickAnswer(keywords[0].count > keywords[1].count)
+                          onClickAnswer(
+                            keywords[0].count > keywords[1].count,
+                            createResult
+                          )
                         }
                       >
                         <span>더 적게</span>{" "}

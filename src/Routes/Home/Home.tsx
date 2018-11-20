@@ -88,6 +88,9 @@ const ExplainSubtitle = styled.div`
   font-weight: bold;
   margin-bottom: 10px;
   transition: 1s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   ${media.desktop`  
     font-size: 12px;
     margin-bottom: 7px;
@@ -170,12 +173,15 @@ class Home extends React.Component {
           <MainTitleImg dir={"UP"} src={higher} />
           <MainTitleImg dir={"DOWN"} src={lower} />
         </MainTitleImgContainer>
-        <ExplainTitle>어떤 것이 검색이 더 많이 됐을까요?</ExplainTitle>
+        <ExplainTitle>
+          어떤 것이 검색이 <span style={{ color: "lightgreen" }}>더 많이</span>{" "}
+          됐을까요?
+        </ExplainTitle>
         <ExplainSubtitle>
-          구글 검색량을 이용한 중독성 넘치는 검색량 비교 게임!
+          구글 검색량을 이용한 중독성 넘치는 검색량 비교 게임입니다!
+          <br />
         </ExplainSubtitle>
         <ExplainAdditional>
-          {" "}
           * 모든 검색량은 구글 한국어 웹에서의 2018년 11월 기준입니다. *
         </ExplainAdditional>
         <Link to={"/game"}>
@@ -214,7 +220,7 @@ class Home extends React.Component {
             )
           }
         >
-          검색어 제안, 오류 신고, 건의 사항은 여기로!
+          검색어 제안, 오류 신고, 건의 사항은 여기로 보내주세요.
         </SuggestionButton>
       </HomeContainer>
     );

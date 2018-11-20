@@ -3,7 +3,7 @@ import Game from "../../Routes/Game";
 import Home from "../../Routes/Home";
 // import Fix from "../../Routes/Fix";
 import Result from "../../Routes/Result";
-import Advertisement from "../Advertisement";
+// import Advertisement from "../Advertisement";
 import { GlobalStyle } from "../../global-styles";
 import { Switch, Route } from "react-router";
 import { ApolloProvider } from "react-apollo";
@@ -20,7 +20,7 @@ const AppContainer = styled.div`
 
 const RealAppContainer = styled.div`
   position: relative;
-  height: 80%;
+  height: 100%;
 `;
 
 class App extends React.Component {
@@ -29,7 +29,7 @@ class App extends React.Component {
       <>
         <ApolloProvider client={client}>
           <AppContainer>
-            <Advertisement />
+            {/* <Advertisement /> */}
             <RealAppContainer>
               <GlobalStyle />
               <Switch>
@@ -44,7 +44,7 @@ class App extends React.Component {
                 <Route path="/result" exact={true} component={Result} />
               </Switch>
             </RealAppContainer>
-            <Advertisement />
+            {/* <Advertisement /> */}
           </AppContainer>
         </ApolloProvider>
       </>
