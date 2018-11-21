@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const AdvertisementContainer = styled.div`
   position: relative;
-  height: 10%;
+  height: 90px;
   background-color: goldenrod;
   z-index: 10;
   display: flex;
@@ -11,9 +11,9 @@ const AdvertisementContainer = styled.div`
   justify-content: center;
 `;
 
-class Advertisement extends React.Component<any, any> {
-  public render() {
-    return <AdvertisementContainer>광고</AdvertisementContainer>;
+class Advertisement extends React.Component {
+  render() {
+    return <AdvertisementContainer />;
   }
 }
 

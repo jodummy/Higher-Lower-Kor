@@ -12,10 +12,11 @@ import styled from "styled-components";
 
 const AppContainer = styled.div`
   position: absolute;
-  top: 0;
-  bottom: 0;
+  top: 90px;
+  bottom: 90px;
   right: 0;
   left: 0;
+  overflow: hidden;
 `;
 
 const RealAppContainer = styled.div`
