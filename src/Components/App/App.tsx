@@ -13,7 +13,7 @@ import styled from "styled-components";
 const AppContainer = styled.div`
   position: absolute;
   top: 90px;
-  bottom: 90px;
+  bottom: 0;
   right: 0;
   left: 0;
   overflow: hidden;
