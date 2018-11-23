@@ -145,6 +145,8 @@ const SuggestionButton = styled.div`
   }
   transition: 1s ease;
   font-size: 15px;
+  text-align: center;
+  line-height: 20px;
   ${media.desktop`  
     font-size: 12px;
   `};
@@ -179,7 +181,9 @@ class Home extends React.Component {
         </ExplainTitle>
         <ExplainSubtitle>
           구글 검색량을 이용한 중독성 넘치는 검색량 비교 게임입니다!
-          <br />
+        </ExplainSubtitle>
+        <ExplainSubtitle>
+          매주 업데이트되는 1000개가 넘는 키워드들을 비교해보세요!
         </ExplainSubtitle>
         <ExplainAdditional>
           * 모든 검색량은 구글 한국어 웹에서의 2018년 11월 기준입니다. *
@@ -220,7 +224,9 @@ class Home extends React.Component {
             )
           }
         >
-          검색어 제안, 오류 신고, 건의 사항은 여기로 보내주세요.
+          여러분이 제안해주신 키워드가 게임에 반영됩니다.
+          <br />
+          키워드 제안, 오류 신고, 건의 사항은 여기로 보내주세요.
         </SuggestionButton>
       </HomeContainer>
     );
