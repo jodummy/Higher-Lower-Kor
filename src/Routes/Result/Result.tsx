@@ -35,6 +35,10 @@ import A3 from "../../img/grade/A3.gif";
 import A4 from "../../img/grade/A4.gif";
 import S1 from "../../img/grade/S1.gif";
 import S2 from "../../img/grade/S2.gif";
+import { Mutation } from "react-apollo";
+import { CREATE_OPINION } from "./ResultQueries";
+import { Button, Modal, message as antMessage } from "antd";
+import TextArea from "antd/lib/input/TextArea";
 
 interface IResultContainerProps {
   url: string;
@@ -155,7 +159,11 @@ class Result extends React.Component<IProps, any> {
   constructor(props: IProps) {
     super(props);
     const { score } = this.props.location.state;
-    this.state = {};
+    this.state = {
+      loading: false,
+      visible: false,
+      text: ""
+    };
     if (score <= 0) {
       url =
         Math.random() > 0.5
@@ -207,9 +215,35 @@ class Result extends React.Component<IProps, any> {
     }
   }
 
+  success = () => {
+    antMessage.success("메시지가 개발자에게 전달되었습니다. 감사합니다.");
+  };
+
+  showModal = () => {
+    this.setState({
+      visible: true
+    });
+  };
+
+  handleOk = () => {
+    this.setState({ loading: true });
+    setTimeout(() => {
+      this.setState({ loading: false, visible: false });
+    }, 3000);
+  };
+
+  handleCancel = () => {
+    this.setState({ visible: false });
+  };
+
+  handleOnChange = (e: any) => {
+    this.setState({ text: e.target.value });
+  };
+
   public render() {
     console.log(this.props, this.state);
     const { score } = this.props.location.state;
+    const { visible, loading, text } = this.state;
     return (
       <ResultContainer url={url}>
         <ResultTitle>당신의 점수는</ResultTitle>
@@ -257,6 +291,49 @@ class Result extends React.Component<IProps, any> {
             <RetryButton>재도전</RetryButton>
           </Link>
         </ButtonContainer>
+        <Mutation mutation={CREATE_OPINION}>
+          {createOpinion => {
+            return (
+              <div>
+                <Button icon="smile" type="primary" onClick={this.showModal}>
+                  여러분이 제안해주신 키워드가 게임에 반영됩니다.
+                </Button>
+                <Modal
+                  visible={visible}
+                  title={<div style={{ fontWeight: "bolder" }}>의견</div>}
+                  onOk={this.handleOk}
+                  onCancel={this.handleCancel}
+                  footer={[
+                    <Button key="back" onClick={this.handleCancel}>
+                      돌아가기
+                    </Button>,
+                    <Button
+                      key="submit"
+                      type="primary"
+                      loading={loading}
+                      onClick={() => {
+                        this.setState({ loading: true });
+                        setTimeout(() => {
+                          this.setState({ loading: false, visible: false });
+                          createOpinion({ variables: { text } });
+                          this.success();
+                        }, 3000);
+                      }}
+                    >
+                      보내기
+                    </Button>
+                  ]}
+                >
+                  <TextArea
+                    placeholder={`키워드 제안, 건의사항, 버그제보, 플레이 소감`}
+                    value={text}
+                    onChange={this.handleOnChange}
+                  />
+                </Modal>
+              </div>
+            );
+          }}
+        </Mutation>
       </ResultContainer>
     );
   }

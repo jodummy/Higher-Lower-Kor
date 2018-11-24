@@ -6,7 +6,7 @@ import GamePresenter from "./GamePresenter";
 // const correct = new Audio("../../sound/correct.wav");
 // const wrong = new Audio("../../sound/wrong.mp3");
 
-const length = 678;
+const length = 685;
 const orderArray: any = [];
 for (let i = 0; i < length; i++) {
   orderArray.push(i);

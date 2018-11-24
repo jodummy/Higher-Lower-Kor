@@ -4,7 +4,10 @@ import { Link } from "react-router-dom";
 import higher from "../../img/logo/higher.png";
 import lower from "../../img/logo/lower.png";
 import { media } from "src/config/_mixin";
-import { Icon, Tooltip } from "antd";
+import { Icon, Tooltip, Modal, Button, Input, message } from "antd";
+import { Mutation } from "react-apollo";
+import { CREATE_OPINION } from "./HomeQueries";
+const { TextArea } = Input;
 
 const HomeContainer = styled.div`
   position: absolute;
@@ -129,31 +132,63 @@ const StartButton = styled.div`
   `};
 `;
 
-const SuggestionButton = styled.div`
-  cursor: pointer;
-  animation: floatbutton 3s ease-in-out infinite;
-  @keyframes floatbutton {
-    0% {
-      transform: translatey(0px);
-    }
-    50% {
-      transform: translatey(5px);
-    }
-    100% {
-      transform: translatey(0px);
-    }
-  }
-  transition: 1s ease;
-  font-size: 15px;
-  text-align: center;
-  line-height: 20px;
-  ${media.desktop`  
-    font-size: 12px;
-  `};
-`;
+// const SuggestionButton = styled.div`
+//   cursor: pointer;
+//   animation: floatbutton 3s ease-in-out infinite;
+//   @keyframes floatbutton {
+//     0% {
+//       transform: translatey(0px);
+//     }
+//     50% {
+//       transform: translatey(5px);
+//     }
+//     100% {
+//       transform: translatey(0px);
+//     }
+//   }
+//   transition: 1s ease;
+//   font-size: 15px;
+//   text-align: center;
+//   line-height: 20px;
+//   ${media.desktop`
+//     font-size: 12px;
+//   `};
+// `;
 
 class Home extends React.Component {
+  state = {
+    loading: false,
+    visible: false,
+    text: ""
+  };
+
+  success = () => {
+    message.success("메시지가 개발자에게 전달되었습니다. 감사합니다.");
+  };
+
+  showModal = () => {
+    this.setState({
+      visible: true
+    });
+  };
+
+  handleOk = () => {
+    this.setState({ loading: true });
+    setTimeout(() => {
+      this.setState({ loading: false, visible: false });
+    }, 3000);
+  };
+
+  handleCancel = () => {
+    this.setState({ visible: false });
+  };
+
+  handleOnChange = (e: any) => {
+    this.setState({ text: e.target.value });
+  };
+
   public render() {
+    const { visible, loading, text } = this.state;
     return (
       <HomeContainer>
         <Tooltip
@@ -217,7 +252,51 @@ class Home extends React.Component {
           data-full-width-responsive="true"
         />
         <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-        <SuggestionButton
+        <Mutation mutation={CREATE_OPINION}>
+          {createOpinion => {
+            return (
+              <div>
+                <Button icon="smile" type="primary" onClick={this.showModal}>
+                  여러분이 제안해주신 키워드가 게임에 반영됩니다.
+                </Button>
+                <Modal
+                  visible={visible}
+                  title={<div style={{ fontWeight: "bolder" }}>의견</div>}
+                  onOk={this.handleOk}
+                  onCancel={this.handleCancel}
+                  footer={[
+                    <Button key="back" onClick={this.handleCancel}>
+                      돌아가기
+                    </Button>,
+                    <Button
+                      key="submit"
+                      type="primary"
+                      loading={loading}
+                      onClick={() => {
+                        this.setState({ loading: true });
+                        setTimeout(() => {
+                          this.setState({ loading: false, visible: false });
+                          createOpinion({ variables: { text } });
+                          this.success();
+                        }, 3000);
+                      }}
+                    >
+                      보내기
+                    </Button>
+                  ]}
+                >
+                  <TextArea
+                    placeholder={`키워드 제안, 건의사항, 버그제보, 플레이 소감`}
+                    value={text}
+                    onChange={this.handleOnChange}
+                  />
+                </Modal>
+              </div>
+            );
+          }}
+        </Mutation>
+
+        {/* <SuggestionButton
           onClick={() =>
             window.open(
               "mailto:leegun2003@gmail.com?subject=주제어 제안&body=보내시는 분: 건의 내용: 관심 가져주셔서 감사합니다."
@@ -227,7 +306,7 @@ class Home extends React.Component {
           여러분이 제안해주신 키워드가 게임에 반영됩니다.
           <br />
           키워드 제안, 오류 신고, 건의 사항은 여기로 보내주세요.
-        </SuggestionButton>
+        </SuggestionButton> */}
       </HomeContainer>
     );
   }
