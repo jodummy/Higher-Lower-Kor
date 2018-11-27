@@ -25,24 +25,11 @@ const RealAppContainer = styled.div`
 `;
 
 class App extends React.Component {
-  state = {
-    key: Math.random()
-      .toString(36)
-      .substring(7)
-  };
-  public keyChanger = () => {
-    this.setState({
-      key: Math.random()
-        .toString(36)
-        .substring(7)
-    });
-  };
   public render() {
-    const { key } = this.state;
     return (
       <>
         <ApolloProvider client={client}>
-          <Advertisement key={key} />
+          <Advertisement />
           <AppContainer>
             <RealAppContainer>
               <GlobalStyle />
@@ -52,9 +39,7 @@ class App extends React.Component {
                   path="/game"
                   exact={true}
                   render={({ history }) => {
-                    return (
-                      <Game history={history} keyChanger={this.keyChanger} />
-                    );
+                    return <Game history={history} />;
                   }}
                 />
                 <Route path="/result" exact={true} component={Result} />

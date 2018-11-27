@@ -15,7 +15,6 @@ let shuffledArray: any = [];
 
 interface IProps {
   history: any;
-  keyChanger: any;
 }
 
 interface IState {
@@ -26,7 +25,6 @@ interface IState {
   answerResult: "STANDBY" | "RIGHT" | "WRONG";
   answerClick: boolean;
   keywordData: any;
-  isFlushed: boolean;
 }
 
 class Game extends React.PureComponent<IProps, IState> {
@@ -45,9 +43,7 @@ class Game extends React.PureComponent<IProps, IState> {
       state: "START",
       answerResult: "STANDBY",
       answerClick: false,
-      keywordData: [],
-
-      isFlushed: false
+      keywordData: []
     };
   }
 
@@ -58,21 +54,6 @@ class Game extends React.PureComponent<IProps, IState> {
         : 0
     });
   };
-
-  // public componentWillReceiveProps(nextProps: any) {
-  //   // check current props and nextPros of dealLoaded flag. If dealLoaded was false, and is true, which means the data is fetched, then we should reset isFlushed
-  //   if (!this.props.dealLoaded && nextProps.dealLoaded) {
-  //     this.setState({
-  //       isFlushed: false
-  //     });
-  //   }
-  //   // since we assigned the location.state in <Link>, if we see this prop, and the data is not flushed yet, then flush data, in this case we call loadDeals(), which is a redux action
-  //   if (!this.state.isFlushed && nextProps.location.state === 'flushDeal')) {
-  //     this.setState({
-  //       isFlushed: true,
-  //     }, () => this.props.loadDeals());
-  //   }
-  // }
 
   public render() {
     const {
@@ -140,7 +121,6 @@ class Game extends React.PureComponent<IProps, IState> {
       answerClick: true,
       state: "CLICKANSWER"
     });
-    this.props.keyChanger();
     if (right) {
       setTimeout(() => {
         this.setState({ state: "ANSWERRESULT", answerResult: "RIGHT" });

@@ -23,8 +23,7 @@ class Advertisement extends React.Component {
     return (
       <AdvertisementContainer>
         <ins
-          key={document.URL + key}
-          class="kakao_ad_area"
+          className="kakao_ad_area"
           style={{ display: "none" }}
           data-ad-unit="DAN-1jeqht4x568h2"
           data-ad-width="728"
@@ -39,8 +38,7 @@ class Advertisement extends React.Component {
           data-ad-height="90"
         /> */}
         <ins
-          key={document.URL + key}
-          class="kakao_ad_area"
+          className="kakao_ad_area"
           style={{ display: "none" }}
           data-ad-unit="DAN-uv5u23x5aele"
           data-ad-width="728"
