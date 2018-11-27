@@ -4,11 +4,13 @@ import styled from "styled-components";
 const AdvertisementContainer = styled.div`
   position: relative;
   height: 90px;
+  width: 100%;
   background-color: transparent;
   z-index: 10;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 `;
 
 class Advertisement extends React.Component {
