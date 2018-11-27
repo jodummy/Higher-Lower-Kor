@@ -223,7 +223,7 @@ class Home extends React.Component {
         <ExplainAdditional>
           * 모든 검색량은 구글 한국어 웹에서의 2018년 11월 기준입니다. *
         </ExplainAdditional>
-        <Link to={"/game"}>
+        <Link to={{ pathname: "/game", state: "flushDeal" }}>
           <StartButton>게임 시작!</StartButton>
         </Link>
         <script

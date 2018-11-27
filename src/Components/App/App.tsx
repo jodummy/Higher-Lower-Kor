@@ -3,7 +3,7 @@ import Game from "../../Routes/Game";
 import Home from "../../Routes/Home";
 // import Fix from "../../Routes/Fix";
 import Result from "../../Routes/Result";
-// import Advertisement from "../Advertisement";
+import Advertisement from "../Advertisement";
 import { GlobalStyle } from "../../global-styles";
 import { Switch, Route } from "react-router";
 import { ApolloProvider } from "react-apollo";
@@ -25,12 +25,25 @@ const RealAppContainer = styled.div`
 `;
 
 class App extends React.Component {
+  state = {
+    key: Math.random()
+      .toString(36)
+      .substring(7)
+  };
+  public keyChanger = () => {
+    this.setState({
+      key: Math.random()
+        .toString(36)
+        .substring(7)
+    });
+  };
   public render() {
+    const { key } = this.state;
     return (
       <>
         <ApolloProvider client={client}>
+          <Advertisement key={key} />
           <AppContainer>
-            {/* <Advertisement /> */}
             <RealAppContainer>
               <GlobalStyle />
               <Switch>
@@ -39,7 +52,9 @@ class App extends React.Component {
                   path="/game"
                   exact={true}
                   render={({ history }) => {
-                    return <Game history={history} />;
+                    return (
+                      <Game history={history} keyChanger={this.keyChanger} />
+                    );
                   }}
                 />
                 <Route path="/result" exact={true} component={Result} />
