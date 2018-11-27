@@ -264,6 +264,8 @@ class Home extends React.Component {
                   title={<div style={{ fontWeight: "bolder" }}>의견</div>}
                   onOk={this.handleOk}
                   onCancel={this.handleCancel}
+                  width={500}
+                  centered={true}
                   footer={[
                     <Button key="back" onClick={this.handleCancel}>
                       돌아가기

@@ -22,6 +22,9 @@ ${reset};
   button{
     cursor: pointer;
   }
-
-
+  @media (max-width: 767px){
+  .ant-modal {
+    width: 300px!important;
+    margin: 10px;
+  }}
 `;
