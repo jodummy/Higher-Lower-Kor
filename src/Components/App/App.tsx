@@ -9,14 +9,19 @@ import { Switch, Route } from "react-router";
 import { ApolloProvider } from "react-apollo";
 import client from "../../withApollo";
 import styled from "styled-components";
+import { media } from "src/config/_mixin";
 
 const AppContainer = styled.div`
   position: absolute;
   top: 90px;
-  bottom: 0;
+  bottom: 90px;
   right: 0;
   left: 0;
   overflow: hidden;
+  ${media.phone`
+    top: 50px;
+    bottom: 50px;
+  `}
 `;
 
 const RealAppContainer = styled.div`
@@ -29,7 +34,7 @@ class App extends React.Component {
     return (
       <>
         <ApolloProvider client={client}>
-          <Advertisement />
+          <Advertisement position="TOP" />
           <AppContainer>
             <RealAppContainer>
               <GlobalStyle />
@@ -45,7 +50,7 @@ class App extends React.Component {
                 <Route path="/result" exact={true} component={Result} />
               </Switch>
             </RealAppContainer>
-            {/* <Advertisement /> */}
+            <Advertisement position="BOTTOM" />
           </AppContainer>
         </ApolloProvider>
       </>

@@ -39,6 +39,7 @@ import { Mutation } from "react-apollo";
 import { CREATE_OPINION } from "./ResultQueries";
 import { Button, Modal, message as antMessage } from "antd";
 import TextArea from "antd/lib/input/TextArea";
+import GoogleAd from "../../Components/GoogleAd";
 
 interface IResultContainerProps {
   url: string;
@@ -335,6 +336,7 @@ class Result extends React.Component<IProps, any> {
             );
           }}
         </Mutation>
+        <GoogleAd />
       </ResultContainer>
     );
   }
