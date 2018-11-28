@@ -50,8 +50,8 @@ class App extends React.Component {
                 <Route path="/result" exact={true} component={Result} />
               </Switch>
             </RealAppContainer>
-            <Advertisement position="BOTTOM" />
           </AppContainer>
+          <Advertisement position="BOTTOM" />
         </ApolloProvider>
       </>
     );

@@ -2,8 +2,14 @@ import React from "react";
 import styled from "styled-components";
 import { media } from "src/config/_mixin";
 
-const AdvertisementContainer = styled.div`
-  position: relative;
+interface IAdvertisementContainerProps {
+  position: "TOP" | "BOTTOM";
+}
+
+const AdvertisementContainer = styled<IAdvertisementContainerProps, any>("div")`
+  position: absolute;
+  top: ${props => (props.position === "TOP" ? "0px" : null)};
+  bottom: ${props => (props.position === "BOTTOM" ? "0px" : null)};
   height: 90px;
   width: 100%;
   background-color: transparent;
@@ -41,7 +47,7 @@ class Advertisement extends React.Component<IProps, IState> {
     const { position } = this.props;
     const { env } = this.state;
     return (
-      <AdvertisementContainer>
+      <AdvertisementContainer position={position}>
         {position === "TOP" ? (
           env === "PC" ? (
             <React.Fragment>

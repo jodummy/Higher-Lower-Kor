@@ -296,18 +296,6 @@ class Home extends React.Component {
             );
           }}
         </Mutation>
-
-        {/* <SuggestionButton
-          onClick={() =>
-            window.open(
-              "mailto:leegun2003@gmail.com?subject=주제어 제안&body=보내시는 분: 건의 내용: 관심 가져주셔서 감사합니다."
-            )
-          }
-        >
-          여러분이 제안해주신 키워드가 게임에 반영됩니다.
-          <br />
-          키워드 제안, 오류 신고, 건의 사항은 여기로 보내주세요.
-        </SuggestionButton> */}
       </HomeContainer>
     );
   }
