@@ -492,7 +492,7 @@ class GamePresenter extends React.PureComponent<IProps, {}> {
                       <AnswerButton
                         onClick={() =>
                           onClickAnswer(
-                            keywords[0].count > keywords[1].count,
+                            keywords[0].count >= keywords[1].count,
                             createResult
                           )
                         }

@@ -77,7 +77,7 @@ const MainTitleImg = styled<IMainTitleImg, any>("img")`
 
 const ExplainTitle = styled.div`
   font-weight: bolder;
-  font-size: 27px;
+  font-size: 30px;
   margin-bottom: 15px;
   transition: 1s ease;
   ${media.desktop`  
@@ -207,12 +207,12 @@ class Home extends React.Component {
         </Tooltip>
 
         <MainTitleImgContainer>
-          <MainTitleImg dir={"UP"} src={higher} />
-          <MainTitleImg dir={"DOWN"} src={lower} />
+          <MainTitleImg dir={"UP"} src={higher} alt="더 많이" />
+          <MainTitleImg dir={"DOWN"} src={lower} alt="더 적게" />
         </MainTitleImgContainer>
         <ExplainTitle>
-          어떤 것이 검색이 <span style={{ color: "lightgreen" }}>더 많이</span>{" "}
-          됐을까요?
+          🤔 어떤 키워드가 <span style={{ color: "lightgreen" }}>더 많이</span>{" "}
+          검색됐을까요? 🤔
         </ExplainTitle>
         <ExplainSubtitle>
           구글 검색량을 이용한 중독성 넘치는 검색량 비교 게임입니다!
@@ -226,38 +226,12 @@ class Home extends React.Component {
         <Link to={{ pathname: "/game", state: "flushDeal" }}>
           <StartButton>게임 시작!</StartButton>
         </Link>
-        <script
-          async={true}
-          src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-        />
-        <ins
-          className="adsbygoogle"
-          style={{ display: "block" }}
-          data-ad-client="ca-pub-9994255438328666"
-          data-ad-slot="2297036333"
-          data-ad-format="auto"
-          data-full-width-responsive="true"
-        />
-        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-        <script
-          async={true}
-          src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-        />
-        <ins
-          className="adsbygoogle"
-          style={{ display: "block" }}
-          data-ad-client="ca-pub-9994255438328666"
-          data-ad-slot="8939424166"
-          data-ad-format="link"
-          data-full-width-responsive="true"
-        />
-        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
         <Mutation mutation={CREATE_OPINION}>
           {createOpinion => {
             return (
               <div>
-                <Button icon="smile" type="primary" onClick={this.showModal}>
-                  여러분이 제안해주신 키워드가 게임에 반영됩니다.
+                <Button type="primary" onClick={this.showModal}>
+                  👉 여러분이 제안해주신 키워드가 게임에 반영됩니다. 👈
                 </Button>
                 <Modal
                   visible={visible}
@@ -287,7 +261,7 @@ class Home extends React.Component {
                   ]}
                 >
                   <TextArea
-                    placeholder={`키워드 제안, 건의사항, 버그제보, 플레이 소감`}
+                    placeholder={`광고 클릭시, 키워드 반영이 빨라집니다.`}
                     value={text}
                     onChange={this.handleOnChange}
                   />
@@ -296,6 +270,17 @@ class Home extends React.Component {
             );
           }}
         </Mutation>
+        <script
+          async={true}
+          src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+        />
+        <ins
+          className="adsbygoogle"
+          style={{ display: "inline-block", width: 728, height: 90 }}
+          data-ad-client="ca-pub-9994255438328666"
+          data-ad-slot="2893681527"
+        />
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
       </HomeContainer>
     );
   }
