@@ -6,14 +6,14 @@ import GamePresenter from "./GamePresenter";
 // const correct = new Audio("../../sound/correct.wav");
 // const wrong = new Audio("../../sound/wrong.mp3");
 
-const length = 730;
-const orderArray: any = [];
-for (let i = 0; i < length; i++) {
-  orderArray.push(i);
-}
 let shuffledArray: any = [];
 
 interface IProps {
+  location: {
+    state: {
+      length: number;
+    };
+  };
   history: any;
 }
 
@@ -35,7 +35,12 @@ class Game extends React.PureComponent<IProps, IState> {
     this.rightAnswer = this.rightAnswer.bind(this);
     this.wrongAnswer = this.wrongAnswer.bind(this);
     this.shuffle = this.shuffle.bind(this);
-    shuffledArray = this.shuffle(orderArray);
+    const length = this.props.location.state.length;
+    const orderArray: any = [];
+    for (let i = 0; i < length; i++) {
+      shuffledArray = this.shuffle(orderArray);
+      orderArray.push(i);
+    }
     this.state = {
       currentScore: 0,
       highScore: 0,
@@ -58,12 +63,12 @@ class Game extends React.PureComponent<IProps, IState> {
   public render() {
     const {
       index,
-      //   keywords,
       highScore,
       state,
       answerClick,
       answerResult,
       currentScore
+      // keywords,
       // keywordData
     } = this.state;
     return (

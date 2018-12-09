@@ -8,3 +8,16 @@ export const CREATE_OPINION = gql`
     }
   }
 `;
+
+export const KEYWORDS = gql`
+  query keywordsQuery {
+    keywords {
+      id
+      name
+      image {
+        url
+      }
+      count
+    }
+  }
+`;

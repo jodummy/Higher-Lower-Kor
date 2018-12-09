@@ -43,8 +43,8 @@ class App extends React.Component {
                 <Route
                   path="/game"
                   exact={true}
-                  render={({ history }) => {
-                    return <Game history={history} />;
+                  render={({ history, location }) => {
+                    return <Game history={history} location={location} />;
                   }}
                 />
                 <Route path="/result" exact={true} component={Result} />

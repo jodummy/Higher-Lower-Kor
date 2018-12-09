@@ -26,7 +26,7 @@ class GoogleAd extends React.Component {
       <AdvertisementContainer>
         <ins
           key={document.URL + key}
-          class="adsbygoogle"
+          className="adsbygoogle"
           style={{
             display: "inline-block",
             height: 90,

@@ -5,8 +5,8 @@ import higher from "../../img/logo/higher.png";
 import lower from "../../img/logo/lower.png";
 import { media } from "src/config/_mixin";
 import { Icon, Tooltip, Modal, Button, Input, message } from "antd";
-import { Mutation } from "react-apollo";
-import { CREATE_OPINION } from "./HomeQueries";
+import { Mutation, Query } from "react-apollo";
+import { CREATE_OPINION, KEYWORDS } from "./HomeQueries";
 const { TextArea } = Input;
 
 const HomeContainer = styled.div`
@@ -132,6 +132,16 @@ const StartButton = styled.div`
   `};
 `;
 
+const Signature = styled.div`
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  font-weight: bolder;
+  background-color: black;
+  padding: 6px 12px;
+  box-shadow: 7px 7px 0px 0px white;
+`;
+
 // const SuggestionButton = styled.div`
 //   cursor: pointer;
 //   animation: floatbutton 3s ease-in-out infinite;
@@ -188,100 +198,135 @@ class Home extends React.Component {
   };
 
   public render() {
-    const { visible, loading, text } = this.state;
+    const { visible, text } = this.state;
     return (
-      <HomeContainer>
-        <Tooltip
-          placement="bottomRight"
-          title={"크롬 브라우저를 사용하셔야 정상적으로 게임이 진행됩니다."}
-        >
-          <Icon
-            type="exclamation-circle"
-            style={{
-              fontSize: 30,
-              position: "absolute",
-              right: 20,
-              top: 20
-            }}
-          />
-        </Tooltip>
-
-        <MainTitleImgContainer>
-          <MainTitleImg dir={"UP"} src={higher} alt="더 많이" />
-          <MainTitleImg dir={"DOWN"} src={lower} alt="더 적게" />
-        </MainTitleImgContainer>
-        <ExplainTitle>
-          🤔 어떤 키워드가 <span style={{ color: "lightgreen" }}>더 많이</span>{" "}
-          검색됐을까요? 🤔
-        </ExplainTitle>
-        <ExplainSubtitle>
-          구글 검색량을 이용한 중독성 넘치는 검색량 비교 게임입니다!
-        </ExplainSubtitle>
-        <ExplainSubtitle>
-          매주 업데이트되는 1000개가 넘는 키워드들을 비교해보세요!
-        </ExplainSubtitle>
-        <ExplainAdditional>
-          * 모든 검색량은 구글 한국어 웹에서의 2018년 11월 기준입니다. *
-        </ExplainAdditional>
-        <Link to={{ pathname: "/game", state: "flushDeal" }}>
-          <StartButton>게임 시작!</StartButton>
-        </Link>
-        <Mutation mutation={CREATE_OPINION}>
-          {createOpinion => {
-            return (
-              <div>
-                <Button type="primary" onClick={this.showModal}>
-                  👉 여러분이 제안해주신 키워드가 게임에 반영됩니다. 👈
-                </Button>
-                <Modal
-                  visible={visible}
-                  title={<div style={{ fontWeight: "bolder" }}>의견</div>}
-                  onOk={this.handleOk}
-                  onCancel={this.handleCancel}
-                  width={500}
-                  footer={[
-                    <Button key="back" onClick={this.handleCancel}>
-                      돌아가기
-                    </Button>,
-                    <Button
-                      key="submit"
-                      type="primary"
-                      loading={loading}
-                      onClick={() => {
-                        this.setState({ loading: true });
-                        setTimeout(() => {
-                          this.setState({ loading: false, visible: false });
-                          createOpinion({ variables: { text } });
-                          this.success();
-                        }, 3000);
-                      }}
-                    >
-                      보내기
-                    </Button>
-                  ]}
-                >
-                  <TextArea
-                    placeholder={`광고 클릭시, 키워드 반영이 빨라집니다.`}
-                    value={text}
-                    onChange={this.handleOnChange}
-                  />
-                </Modal>
-              </div>
-            );
-          }}
-        </Mutation>
-        <script
-          async={true}
-          src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-        />
-        <ins
-          className="adsbygoogle"
-          style={{ display: "inline-block", width: 728, height: 90 }}
-          data-ad-client="ca-pub-9994255438328666"
-          data-ad-slot="2893681527"
-        />
-        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-      </HomeContainer>
+      <Query
+        query={KEYWORDS}
+        notifyOnNetworkStatusChange={true}
+        fetchPolicy={"cache-and-network"}
+      >
+        {({ loading, error, data }: any) => {
+          if (loading) return "Loading";
+          if (error) return "Error";
+          const { length } = data.keywords;
+          return (
+            <HomeContainer>
+              <Tooltip
+                placement="bottomRight"
+                title={
+                  "크롬 브라우저를 사용하셔야 정상적으로 게임이 진행됩니다."
+                }
+              >
+                <Icon
+                  type="chrome"
+                  style={{
+                    fontSize: 30,
+                    position: "absolute",
+                    right: 20,
+                    top: 20
+                  }}
+                />
+              </Tooltip>
+              <Signature>
+                Made by <span style={{ color: "#0000ff" }}>Paris</span>Taxi
+                <span style={{ color: "#ff0000" }}>Driver</span>
+              </Signature>
+              <MainTitleImgContainer>
+                <MainTitleImg dir={"UP"} src={higher} alt="더 많이" />
+                <MainTitleImg dir={"DOWN"} src={lower} alt="더 적게" />
+              </MainTitleImgContainer>
+              <ExplainTitle>
+                🤔 어떤 키워드가{" "}
+                <span style={{ color: "lightgreen" }}>더 많이</span>{" "}
+                검색됐을까요? 🤔
+              </ExplainTitle>
+              <ExplainSubtitle>
+                구글 검색량을 이용한 중독성 넘치는 검색량 비교 게임입니다!
+              </ExplainSubtitle>
+              <ExplainSubtitle>
+                매주 업데이트되는 1000개가 넘는 키워드들을 비교해보세요!
+              </ExplainSubtitle>
+              <ExplainAdditional>
+                * 모든 검색량은{" "}
+                <span style={{ fontWeight: "bolder" }}>구글 한국어 웹</span>
+                에서의
+                <span style={{ fontWeight: "bolder" }}>2018년 11월 기준</span>
+                입니다. *
+              </ExplainAdditional>
+              <Link
+                to={{
+                  pathname: "/game",
+                  state: {
+                    length
+                  }
+                }}
+              >
+                <StartButton>게임 시작!</StartButton>
+              </Link>
+              <Mutation mutation={CREATE_OPINION}>
+                {createOpinion => {
+                  return (
+                    <div>
+                      <Button type="primary" onClick={this.showModal}>
+                        👉 여러분이 제안해주신 키워드가 게임에 반영됩니다. 👈
+                      </Button>
+                      <Modal
+                        visible={visible}
+                        title={<div style={{ fontWeight: "bolder" }}>의견</div>}
+                        onOk={this.handleOk}
+                        onCancel={this.handleCancel}
+                        width={500}
+                        footer={[
+                          <Button key="back" onClick={this.handleCancel}>
+                            돌아가기
+                          </Button>,
+                          <Button
+                            key="submit"
+                            type="primary"
+                            loading={loading}
+                            onClick={() => {
+                              this.setState({ loading: true });
+                              setTimeout(() => {
+                                this.setState({
+                                  loading: false,
+                                  visible: false
+                                });
+                                createOpinion({ variables: { text } });
+                                this.success();
+                              }, 3000);
+                            }}
+                          >
+                            보내기
+                          </Button>
+                        ]}
+                      >
+                        <TextArea
+                          placeholder={`광고 클릭시, 키워드 반영이 빨라집니다.`}
+                          value={text}
+                          onChange={this.handleOnChange}
+                        />
+                      </Modal>
+                    </div>
+                  );
+                }}
+              </Mutation>
+              <script
+                async={true}
+                src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+              />
+              <ins
+                className="adsbygoogle"
+                style={{ display: "inline-block", width: 728, height: 90 }}
+                data-ad-client="ca-pub-9994255438328666"
+                data-ad-slot="2893681527"
+              />
+              <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+              </script>
+            </HomeContainer>
+          );
+        }}
+      </Query>
     );
   }
 }

@@ -142,6 +142,16 @@ const Info = styled.div`
 font-size: 12px; `};
 `;
 
+const Signature = styled.div`
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  font-weight: bolder;
+  background-color: black;
+  padding: 6px 12px;
+  box-shadow: 7px 7px 0px 0px white;
+`;
+
 interface IProps {
   location: {
     state: {
@@ -172,7 +182,7 @@ class Result extends React.Component<IProps, any> {
           ? F3
           : F4;
       message = "🙀 네? 잘못 누른거죠? 🙀";
-    } else if (score <= 5) {
+    } else if (score <= 7) {
       (url =
         Math.random() > 0.5
           ? Math.random() > 0.5
@@ -181,8 +191,8 @@ class Result extends React.Component<IProps, any> {
           : Math.random() > 0.5
           ? E3
           : E4),
-        (message = "🙈 못 본 걸로 할게요. 평균은 넘겨보자고요. 🙈");
-    } else if (score <= 11) {
+        (message = "🙈 못 본 걸로 할게요, 평균은 넘겨보자고요. 🙈");
+    } else if (score <= 15) {
       (url =
         Math.random() > 0.5
           ? Math.random() > 0.5
@@ -192,13 +202,13 @@ class Result extends React.Component<IProps, any> {
           ? D3
           : D4),
         (message = "😉 괜찮은 점수네요. 😉");
-    } else if (score <= 19) {
+    } else if (score <= 24) {
       (url = Math.random() > 0.5 ? C1 : C2),
         (message = "🤗 네이버보다 구글을 많이 쓰시는 타입이시네요. 🤗");
-    } else if (score <= 27) {
+    } else if (score <= 34) {
       (url = Math.random() > 0.5 ? B1 : B2),
         (message = "구글링의 달인이시네요!");
-    } else if (score <= 36) {
+    } else if (score <= 45) {
       (url =
         Math.random() > 0.5
           ? Math.random() > 0.5
@@ -208,7 +218,7 @@ class Result extends React.Component<IProps, any> {
           ? A3
           : A4),
         (message = `🤯 대단해요! 인터넷 짬밥 좀 드셨군요! 🤯`);
-    } else if (score <= 190) {
+    } else if (score <= 100) {
       (url = Math.random() > 0.5 ? S1 : S2),
         (message = `😎 신기록! 대단합니다! 😎`);
     }
@@ -240,16 +250,19 @@ class Result extends React.Component<IProps, any> {
   };
 
   public render() {
-    console.log(this.props, this.state);
     const { score } = this.props.location.state;
     const { visible, loading, text } = this.state;
     return (
       <ResultContainer url={url}>
+        <Signature>
+          Made by <span style={{ color: "#0000ff" }}>Paris</span>Taxi
+          <span style={{ color: "#ff0000" }}>Driver</span>
+        </Signature>
         <ResultTitle>당신의 점수는</ResultTitle>
         <Score>{score}점</Score>
         <ResultSubtitle>{message}</ResultSubtitle>
-        <Info style={{ marginBottom: 15 }}>* 유저 평균 5.2점 *</Info>
-        <Info style={{ marginBottom: 15, opacity: 1 }}>
+        <Info style={{ marginBottom: 15 }}>* 유저 평균 7.2점 *</Info>
+        {/* <Info style={{ marginBottom: 15, opacity: 1 }}>
           🤔 뭔가 사야할 게 생각나셨나요? 🤔
         </Info>
         <div style={{ marginBottom: 15 }}>
@@ -259,7 +272,7 @@ class Result extends React.Component<IProps, any> {
             height="36"
             scrolling="no"
           />
-        </div>
+        </div> */}
         <SocialContainer>
           <FacebookShareButton url={"https://higherlowerkorea.com"}>
             <FacebookIcon
@@ -294,7 +307,7 @@ class Result extends React.Component<IProps, any> {
           <Link to={"/"}>
             <RetryButton>메인</RetryButton>
           </Link>
-          <Tooltip placement="right" title={`🙏🏻 광고 클릭 부탁드려요 🙏🏻`}>
+          <Tooltip placement="right" title={`🙏 광고 클릭 부탁드립니다 🙏`}>
             <Link to={"/game"}>
               <RetryButton>재도전</RetryButton>
             </Link>
