@@ -169,7 +169,8 @@ class Game extends React.PureComponent<IProps, IState> {
       this.props.history.push({
         pathname: `/result`,
         state: {
-          score: this.state.currentScore
+          score: this.state.currentScore,
+          length: this.props.location.state.length
         }
       });
     }, 1000);

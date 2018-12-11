@@ -156,6 +156,7 @@ interface IProps {
   location: {
     state: {
       score: number;
+      length: number;
     };
   };
 }
@@ -250,7 +251,7 @@ class Result extends React.Component<IProps, any> {
   };
 
   public render() {
-    const { score } = this.props.location.state;
+    const { score, length } = this.props.location.state;
     const { visible, loading, text } = this.state;
     return (
       <ResultContainer url={url}>
@@ -303,12 +304,34 @@ class Result extends React.Component<IProps, any> {
             />
           </EmailShareButton>
         </SocialContainer>
+        {/* <ins
+          className="kakao_ad_area"
+          style={{ display: "none" }}
+          data-ad-unit="DAN-t4z03kw98i8z"
+          data-ad-width="250"
+          data-ad-height="250"
+        /> */}
+
+        {/* <ins
+          className="kakao_ad_area"
+          style={{ display: "none" }}
+          data-ad-unit="DAN-1hbd7dqdba7ab"
+          data-ad-width="300"
+          data-ad-height="250"
+        /> */}
         <ButtonContainer>
           <Link to={"/"}>
             <RetryButton>메인</RetryButton>
           </Link>
           <Tooltip placement="right" title={`🙏 광고 클릭 부탁드립니다 🙏`}>
-            <Link to={"/game"}>
+            <Link
+              to={{
+                pathname: "/game",
+                state: {
+                  length
+                }
+              }}
+            >
               <RetryButton>재도전</RetryButton>
             </Link>
           </Tooltip>
