@@ -255,7 +255,13 @@ class Result extends React.Component<IProps, any> {
     const { visible, loading, text } = this.state;
     return (
       <ResultContainer url={url}>
-        <Signature>
+        <Signature
+          onClick={() =>
+            window.open(
+              "mailto:higherlowerkorea@gmail.com?subject=제작자에게...&body=보내시는 분: 건의 내용: 광고문의, 건의사항, 키워드 제안"
+            )
+          }
+        >
           Made by <span style={{ color: "#0000ff" }}>Paris</span>Taxi
           <span style={{ color: "#ff0000" }}>Driver</span>
         </Signature>

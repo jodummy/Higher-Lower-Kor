@@ -3,6 +3,8 @@ import { Query, Mutation } from "react-apollo";
 // import { data } from "./keywordData";
 import { KEYWORDS, CREATE_RESULT } from "./GameQueries";
 import GamePresenter from "./GamePresenter";
+import GameLoading from "../../Components/GameLoading";
+import GameError from "src/Components/GameError";
 // const correct = new Audio("../../sound/correct.wav");
 // const wrong = new Audio("../../sound/wrong.mp3");
 
@@ -78,8 +80,11 @@ class Game extends React.PureComponent<IProps, IState> {
         fetchPolicy={"cache-and-network"}
       >
         {({ loading, error, data }: any) => {
-          if (loading) return "Loading";
-          if (error) return "Error";
+          if (loading) return <GameLoading />;
+          if (error) {
+            console.log(error.message);
+            return <GameError />;
+          }
           const keywordData = data.keywords;
           return (
             <Mutation mutation={CREATE_RESULT}>
