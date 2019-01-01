@@ -25,7 +25,6 @@
     "styled-components": "^4.0.2",
     "styled-reset": "^1.6.0"
   },
-  "homepage": "https://dl0312.github.io/Higher-Lower-Kor/",
   "main": "index.tsx",
   "scripts": {
     "start": "react-scripts-ts start",
@@ -33,7 +32,8 @@
     "test": "react-scripts-ts test --env=jsdom",
     "eject": "react-scripts-ts eject",
     "predeploy": "yarn run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "now-build": "react-scripts-ts build && mv build dist"
   },
   "devDependencies": {
     "@types/jest": "^23.3.7",
