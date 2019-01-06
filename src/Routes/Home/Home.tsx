@@ -346,7 +346,7 @@ class Home extends React.Component {
         <ins
           className="adsbygoogle"
           style={{ display: "inline-block", width: 728, height: 90 }}
-          data-ad-client="ca-pub-9994255438328666"
+          data-ad-client="ca-pub-8487254106636373"
           data-ad-slot="2893681527"
         />
         <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
