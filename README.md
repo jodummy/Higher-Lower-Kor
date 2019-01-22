@@ -7,7 +7,7 @@
 
 두 검색어 중 구글에 검색이 더 많이 된 것은 어떤 쪽일까요?
 
-`검색량은 2018년 11월 기준, 영어 검색어는 한국어 웹 기준`
+`검색량은 한국어 웹 기준`
 
 ## 결과 등급 분류
 
@@ -25,5 +25,9 @@
 풍월량 : https://www.youtube.com/watch?v=gIvDBhlr2H4
 
 우왁굳 : https://www.youtube.com/watch?v=mAdbVb70nNE
+
+도티 : https://www.youtube.com/watch?v=_sORpZaNFQQ&t=37s
+
+대도서관 : https://www.youtube.com/watch?v=p8PJ450jZG8&t=410s
 
 참조 : http://www.higherlowergame.com/
