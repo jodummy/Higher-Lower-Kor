@@ -5,11 +5,12 @@ import Home from "../../Routes/Home";
 import Result from "../../Routes/Result";
 import Advertisement from "../Advertisement";
 import { GlobalStyle } from "../../global-styles";
-import { Switch, Route } from "react-router";
+import { Switch, Route, RouteComponentProps } from "react-router";
 import { ApolloProvider } from "react-apollo";
 import client from "../../withApollo";
 import styled from "styled-components";
 import { media } from "src/config/_mixin";
+// import GoogleAd from "../GoogleAd";
 
 const AppContainer = styled.div`
   position: absolute;
@@ -20,7 +21,7 @@ const AppContainer = styled.div`
   overflow: hidden;
   ${media.phone`
     top: 50px;
-    bottom: 50px;
+  bottom:50px;
   `}
 `;
 
@@ -29,8 +30,11 @@ const RealAppContainer = styled.div`
   height: 100%;
 `;
 
-class App extends React.Component {
+interface IProps extends RouteComponentProps<any> {}
+
+class App extends React.Component<IProps, {}> {
   public render() {
+    console.log(this.props);
     return (
       <>
         <ApolloProvider client={client}>

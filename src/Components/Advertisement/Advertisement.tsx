@@ -92,12 +92,6 @@ class Advertisement extends React.Component<IProps, IState> {
               data-ad-width="728"
               data-ad-height="90"
             />
-            {/* <a href="https://coupa.ng/bgebnn" target="_blank">
-              <img
-                src="https://static.coupangcdn.com/image/affiliate/category/20180610/food-640-x-100.jpg"
-                alt="쿠팡 식품"
-              />
-            </a> */}
           </React.Fragment>
         ) : (
           <ins

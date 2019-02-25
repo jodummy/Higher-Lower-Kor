@@ -149,6 +149,7 @@ const StartButton = styled.div`
 `;
 
 const Signature = styled.div`
+  cursor: pointer;
   position: absolute;
   right: 20px;
   bottom: 20px;
@@ -259,7 +260,7 @@ class Home extends React.Component {
           * 모든 검색량은{" "}
           <span style={{ fontWeight: "bolder" }}>구글 한국어 웹</span>
           에서의
-          <span style={{ fontWeight: "bolder" }}>2018년 11월 기준</span>
+          <span style={{ fontWeight: "bolder" }}>{` 2019년 1월 기준 `}</span>
           입니다. *
         </ExplainAdditional>
         <Query
@@ -298,7 +299,7 @@ class Home extends React.Component {
             return (
               <div>
                 <Button type="primary" onClick={this.showModal}>
-                  👉 여러분이 제안해주신 키워드가 게임에 반영됩니다. 👈
+                  👉 키워드를 제안해주세요 👈
                 </Button>
                 <Modal
                   visible={visible}

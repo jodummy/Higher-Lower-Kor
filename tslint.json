@@ -12,7 +12,8 @@
     "member-ordering": false,
     "member-access": false,
     "one-variable-per-declaration": false,
-    "jsx-boolean-value": false
+    "jsx-boolean-value": false,
+    "no-empty-interface": false
     // "no-unused-expression": false
   },
   "linterOptions": {

@@ -39,7 +39,6 @@ import { Mutation } from "react-apollo";
 import { CREATE_OPINION } from "./ResultQueries";
 import { Button, Modal, message as antMessage, Tooltip } from "antd";
 import TextArea from "antd/lib/input/TextArea";
-import GoogleAd from "../../Components/GoogleAd";
 
 interface IResultContainerProps {
   url: string;
@@ -150,6 +149,7 @@ const Signature = styled.div`
   background-color: black;
   padding: 6px 12px;
   box-shadow: 7px 7px 0px 0px white;
+  cursor: pointer;
 `;
 
 interface IProps {
@@ -222,6 +222,9 @@ class Result extends React.Component<IProps, any> {
     } else if (score <= 100) {
       (url = Math.random() > 0.5 ? S1 : S2),
         (message = `😎 신기록! 대단합니다! 😎`);
+    } else {
+      (url = Math.random() > 0.5 ? S1 : S2),
+        (message = `🌌 우주로 가버린 스코어 🌌`);
     }
   }
 
@@ -386,8 +389,6 @@ class Result extends React.Component<IProps, any> {
             );
           }}
         </Mutation>
-
-        <GoogleAd />
       </ResultContainer>
     );
   }

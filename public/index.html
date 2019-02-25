@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="ko">
   <head>
+    <script
+      async
+      src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+    ></script>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-9994255438328666",
+        enable_page_level_ads: true
+      });
+    </script>
     <meta charset="utf-8" />
     <meta
       name="viewport"
@@ -10,16 +20,25 @@
     <meta name="description" content="구글 검색어 비교 게임 한국어버전" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <link rel="shortcut icon" href="%PUBLIC_URL%/exchange.png" />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-132046967-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "UA-132046967-1");
+    </script>
+
     <script
       async
       src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
     ></script>
-    <script>
-      (adsbygoogle = window.adsbygoogle || []).push({
-        google_ad_client: "ca-pub-8487254106636373",
-        enable_page_level_ads: true
-      });
-    </script>
 
     <script
       async
@@ -30,6 +49,14 @@
       src="//t1.daumcdn.net/adfit/static/ad.min.js"
       async
     ></script>
+    <meta
+      name="naver-site-verification"
+      content="28393896cc41f38f3ea81e313f76a66e4aed7103"
+    />
+    <script
+      async
+      src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+    ></script>
     <title>더 많이 더 적게</title>
   </head>
   <body>
@@ -38,20 +65,42 @@
       src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
     ></script>
     <script>
-      (adsbygoogle = window.adsbygoogle || []).push({
-        google_ad_client: "ca-pub-8487254106636373",
-        enable_page_level_ads: true
-      });
+      var googletag = window.googletag || { cmd: [] };
     </script>
-    <!--
-      <div
-        id="ad"
-        style="color:blue;height: 90px;
-      display: flex;
-      justify-content: center;"
-      >
-      </div>
-    -->
+    <script async src="//www.googletagservices.com/tag/js/gpt.js"></script>
+    <!-- <script>
+      googletag.cmd.push(function() {
+        var REFRESH_KEY = "refresh";
+        var REFRESH_VALUE = "true";
+        // 이 슬롯은 새로고침을 위해 선언된 타겟팅 키가 포함되어 있으므로
+        // 새로고침할 수 있습니다.
+        googletag
+          .defineSlot('/21788633561/network-code//ad-code', [970, 90], 'div-gpt-ad-1547876944150-0')
+          .setTargeting(REFRESH_KEY, REFRESH_VALUE)
+          .addService(googletag.pubads());
+        // 슬롯이 표시 가능해진 후 대기해야 하는 시간(초)입니다.
+        var SECONDS_TO_WAIT_AFTER_VIEWABILITY = 60;
+
+        googletag
+          .pubads()
+          .addEventListener("impressionViewable", function(event) {
+            var slot = event.slot;
+            if (slot.getTargeting(REFRESH_KEY).indexOf(REFRESH_VALUE) > -1) {
+              setTimeout(function() {
+                googletag.pubads().refresh([slot]);
+              }, SECONDS_TO_WAIT_AFTER_VIEWABILITY * 1000);
+            }
+          });
+
+        googletag.enableServices();
+      });
+    </script> -->
+    <!-- <form
+      style="position: absolute; z-index: 30;"
+      onsubmit="googletag.pubads().refresh();return false;"
+    >
+      <input type="submit" value="refresh" />
+    </form> -->
     <div id="root"></div>
   </body>
 </html>

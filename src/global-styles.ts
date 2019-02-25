@@ -12,7 +12,7 @@ ${reset};
   }
   body{
     font-family: 'Nanum Gothic', sans-serif;
-      overflow: hidden;
+    overflow: hidden;
     color: white;
   }
   a{ 
