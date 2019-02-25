@@ -18,11 +18,7 @@
 
 #### Install Node, Yarn
 
-<<<<<<< HEAD
 The project manages the version of node through `nvm`
-=======
-`검색량은 2018년 11월 기준, 영어 검색어는 한국어 웹 기준`
->>>>>>> parent of bac8f10... Update README.md
 
 ```bash
 $ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
@@ -63,8 +59,6 @@ $ yarn test
 $ yarn start
 ```
 #### How to play
-
-<<<<<<< HEAD
 Which of the two search terms did Google search more?
 
 ***Search volume is based on Feb 2019, and English search term is based on Korean web***
@@ -82,7 +76,7 @@ Which of the two search terms did Google search more?
 | 46  ~ 100 | NEW RECORD 😎          |
 | 101 ~     | SKYROCKET SCORE 🌌     |
 
-A lot of youtuber enjoyed it
+#### Who played?
 
 | youtuber | video                                                                                                |
 | -------- | ---------------------------------------------------------------------------------------------------- |
@@ -94,7 +88,6 @@ A lot of youtuber enjoyed it
 
 
 ## References
-
 The repository was inspired by this site.
 - http://www.higherlowergame.com/
 
@@ -103,6 +96,3 @@ The repository was inspired by this site.
 ```
 MIT
 ```
-=======
-참조 : http://www.higherlowergame.com/
->>>>>>> parent of bac8f10... Update README.md
