@@ -46,8 +46,6 @@ $ yarn
 ```
 #### Build project
 ```bash
-$ npm run build
-...
 $ yarn build
 ```
 #### Test project
