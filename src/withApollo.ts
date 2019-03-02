@@ -1,15 +1,15 @@
 import { ApolloClient } from "apollo-boost";
-import { API_URL } from "./config";
 import { InMemoryCache } from "apollo-cache-inmemory";
 import { ApolloLink } from "apollo-link";
 import { HttpLink } from "apollo-link-http";
 import { onError } from "apollo-link-error";
 import { toast } from "react-toastify";
 
+console.log(process.env);
 const cache = new InMemoryCache();
 
 const httpLink = new HttpLink({
-  uri: API_URL
+  uri: process.env.REACT_APP_API_URL
 });
 
 const errorLink = onError(({ graphQLErrors, networkError }) => {

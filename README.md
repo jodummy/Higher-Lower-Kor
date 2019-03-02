@@ -34,7 +34,11 @@ In the project root as follows are performed through the `.nvmrc`
 $ nvm use
 Found '/Users/user/Github/higherlowerkor/.nvmrc' with version <10.10.0>
 ```
-
+### env
+you have to fill out `API_URL` with GraphQL end point on `.env` or `.env.development` to use `react-apollo`
+```
+REACT_APP_API_URL=${GraphQL_end_point}
+```
 
 ### Yarn CLIs
 

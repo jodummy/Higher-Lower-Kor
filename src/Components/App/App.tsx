@@ -34,7 +34,6 @@ interface IProps extends RouteComponentProps<any> {}
 
 class App extends React.Component<IProps, {}> {
   public render() {
-    console.log(this.props);
     return (
       <>
         <ApolloProvider client={client}>

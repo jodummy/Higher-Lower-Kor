@@ -3,15 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@types/antd": "^1.0.0",
-    "@types/detect-browser": "^2.0.1",
-    "@types/graphql": "^14.0.3",
-    "@types/react-toastify": "^4.0.1",
-    "@types/styled-components": "^4.0.2",
     "antd": "^3.10.7",
     "apollo-boost": "^0.1.20",
-    "detect-browser": "^3.0.1",
-    "dotenv": "^6.1.0",
     "gh-pages": "^2.0.1",
     "graphql": "^14.0.2",
     "merge": "^1.2.1",
@@ -40,12 +33,17 @@
   },
   "devDependencies": {
     "@commitlint/cli": "^7.5.2",
+    "@types/antd": "^1.0.0",
+    "@types/dotenv": "^6.1.0",
+    "@types/graphql": "^14.0.3",
     "@types/jest": "^23.3.7",
     "@types/node": "^10.12.0",
     "@types/react": "^16.4.18",
     "@types/react-dom": "^16.0.9",
     "@types/react-router-dom": "^4.3.1",
     "@types/react-share": "^2.1.1",
+    "@types/react-toastify": "^4.0.1",
+    "@types/styled-components": "^4.0.2",
     "jest": "^24.1.0",
     "typescript": "^3.1.3"
   }

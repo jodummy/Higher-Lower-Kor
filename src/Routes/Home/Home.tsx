@@ -260,7 +260,9 @@ class Home extends React.Component {
           * 모든 검색량은{" "}
           <span style={{ fontWeight: "bolder" }}>구글 한국어 웹</span>
           에서의
-          <span style={{ fontWeight: "bolder" }}>{` 2019년 1월 기준 `}</span>
+          <span
+            style={{ fontWeight: "bolder" }}
+          >{` 2019년 ${new Date().getMonth()}월 기준 `}</span>
           입니다. *
         </ExplainAdditional>
         <Query
