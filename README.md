@@ -23,6 +23,7 @@ The project manages the version of node through `nvm`
 ```bash
 $ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
 $ command -v nvm
+$ nvm use
 $ nvm install
 $ which node
 $ npm install -g yarn
