@@ -7,7 +7,7 @@ import { toast } from "react-toastify";
 
 const cache = new InMemoryCache();
 const httpLink = new HttpLink({
-  uri: process.env.REACT_APP_API_URL
+  uri: "https://api-apeast.graphcms.com/v1/cjok8cn6f1ab501g52d67o38v/master"
 });
 
 const errorLink = onError(({ graphQLErrors, networkError }) => {
