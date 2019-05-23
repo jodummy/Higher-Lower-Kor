@@ -1,16 +1,18 @@
 {
   "version": 2,
   "name": "higherlowerkorea",
+  "alias": ["higherlowerkorea.com", "www.higherlowerkorea.com"],
   "builds": [
     {
       "src": "package.json",
       "use": "@now/static-build",
-      "config": { "distDir": "build" },
-      "env": {
-        "REACT_APP_API_URL": "@graph-cms-api-key"
-      }
+      "config": { "distDir": "build" }
     }
   ],
+  "env": {
+    "REACT_APP_API_URL": "@api_key"
+  },
+  "regions": ["hnd", "icn"],
   "routes": [
     {
       "src": "/static/(.*)",

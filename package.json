@@ -34,7 +34,6 @@
   "devDependencies": {
     "@commitlint/cli": "^7.5.2",
     "@types/antd": "^1.0.0",
-    "@types/dotenv": "^6.1.0",
     "@types/graphql": "^14.0.3",
     "@types/jest": "^23.3.7",
     "@types/node": "^10.12.0",

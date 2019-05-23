@@ -6,7 +6,6 @@ import { onError } from "apollo-link-error";
 import { toast } from "react-toastify";
 
 const cache = new InMemoryCache();
-
 const httpLink = new HttpLink({
   uri: process.env.REACT_APP_API_URL
 });
