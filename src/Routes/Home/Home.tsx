@@ -46,7 +46,6 @@ const MainTitleImg = styled<IMainTitleImg, any>("img")`
   height: 140px;
   margin: 0px 10px 30px;
   animation: float 6s ease-in-out infinite;
-  /* font-family: "Nanum Myeongjo", serif; */
   @keyframes float {
     0% {
       -webkit-filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 1));
@@ -158,29 +157,6 @@ const Signature = styled.div`
   padding: 6px 12px;
   box-shadow: 7px 7px 0px 0px white;
 `;
-
-// const SuggestionButton = styled.div`
-//   cursor: pointer;
-//   animation: floatbutton 3s ease-in-out infinite;
-//   @keyframes floatbutton {
-//     0% {
-//       transform: translatey(0px);
-//     }
-//     50% {
-//       transform: translatey(5px);
-//     }
-//     100% {
-//       transform: translatey(0px);
-//     }
-//   }
-//   transition: 1s ease;
-//   font-size: 15px;
-//   text-align: center;
-//   line-height: 20px;
-//   ${media.desktop`
-//     font-size: 12px;
-//   `};
-// `;
 
 class Home extends React.Component {
   public render() {

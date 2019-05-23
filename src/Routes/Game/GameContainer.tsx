@@ -1,6 +1,5 @@
 import React from "react";
 import { Query, Mutation } from "react-apollo";
-// import { data } from "./keywordData";
 import { KEYWORDS, CREATE_RESULT } from "./GameQueries";
 import GamePresenter from "./GamePresenter";
 import GameLoading from "../../Components/GameLoading";

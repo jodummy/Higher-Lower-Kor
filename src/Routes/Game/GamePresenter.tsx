@@ -277,8 +277,6 @@ const KeywordSubtitle = styled.div`
   `};
 `;
 
-// const Source = styled.div``;
-
 const HighScore = styled.div`
   color: white;
   position: absolute;
@@ -415,7 +413,6 @@ class GamePresenter extends React.PureComponent<IProps, {}> {
                     </KeywordSubtitle>
                     <div>검색 됨</div>
                   </KeywordInfoContainer>
-                  {/* <Source>{keyword.source}</Source> */}
                 </KeywordContainer>
               );
             } else if (i === 1) {
@@ -469,7 +466,6 @@ class GamePresenter extends React.PureComponent<IProps, {}> {
                       <div>검색 됨</div>
                     </ButtonContainer>
                   </KeywordInfoContainer>
-                  {/* <Source>{keyword.source}</Source> */}
                 </KeywordContainer>
               );
             } else {
@@ -503,7 +499,6 @@ class GamePresenter extends React.PureComponent<IProps, {}> {
                       <div>검색 됨</div>
                     </ButtonContainer>
                   </KeywordInfoContainer>
-                  {/* <Source>{keyword.source}</Source> */}
                 </KeywordContainer>
               );
             }
