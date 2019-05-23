@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 import higher from "../../img/logo/higher.png";
 import lower from "../../img/logo/lower.png";
 import { media } from "src/config/_mixin";
-import { Icon, Tooltip, Modal, Button, Input, message } from "antd";
-import { Mutation, Query } from "react-apollo";
-import { CREATE_OPINION, KEYWORDS } from "./HomeQueries";
-const { TextArea } = Input;
+import { Icon, Tooltip } from "antd";
+import { Query } from "react-apollo";
+import { KEYWORDS } from "./HomeQueries";
+import ModalButton from "src/Components/ModalButton";
 
 const HomeContainer = styled.div`
   position: absolute;
@@ -183,39 +183,7 @@ const Signature = styled.div`
 // `;
 
 class Home extends React.Component {
-  state = {
-    loading: false,
-    visible: false,
-    text: ""
-  };
-
-  success = () => {
-    message.success("메시지가 개발자에게 전달되었습니다. 감사합니다.");
-  };
-
-  showModal = () => {
-    this.setState({
-      visible: true
-    });
-  };
-
-  handleOk = () => {
-    this.setState({ loading: true });
-    setTimeout(() => {
-      this.setState({ loading: false, visible: false });
-    }, 3000);
-  };
-
-  handleCancel = () => {
-    this.setState({ visible: false });
-  };
-
-  handleOnChange = (e: any) => {
-    this.setState({ text: e.target.value });
-  };
-
   public render() {
-    const { visible, text } = this.state;
     return (
       <HomeContainer>
         <Tooltip
@@ -278,7 +246,6 @@ class Home extends React.Component {
                 </LoadingButton>
               );
             if (error) {
-              console.log(error.message);
               return <LoadingButton>😰 문제가 생겼습니다. 😰</LoadingButton>;
             }
             const { length } = data.keywords;
@@ -296,52 +263,7 @@ class Home extends React.Component {
             );
           }}
         </Query>
-        <Mutation mutation={CREATE_OPINION}>
-          {createOpinion => {
-            return (
-              <div>
-                <Button type="primary" onClick={this.showModal}>
-                  👉 키워드를 제안해주세요 👈
-                </Button>
-                <Modal
-                  visible={visible}
-                  title={<div style={{ fontWeight: "bolder" }}>의견</div>}
-                  onOk={this.handleOk}
-                  onCancel={this.handleCancel}
-                  width={500}
-                  footer={[
-                    <Button key="back" onClick={this.handleCancel}>
-                      돌아가기
-                    </Button>,
-                    <Button
-                      key="submit"
-                      type="primary"
-                      onClick={() => {
-                        this.setState({ loading: true });
-                        setTimeout(() => {
-                          this.setState({
-                            loading: false,
-                            visible: false
-                          });
-                          createOpinion({ variables: { text } });
-                          this.success();
-                        }, 3000);
-                      }}
-                    >
-                      보내기
-                    </Button>
-                  ]}
-                >
-                  <TextArea
-                    placeholder={`광고 클릭시, 키워드 반영이 빨라집니다.`}
-                    value={text}
-                    onChange={this.handleOnChange}
-                  />
-                </Modal>
-              </div>
-            );
-          }}
-        </Mutation>
+        <ModalButton />
         <script
           async={true}
           src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"

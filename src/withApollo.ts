@@ -5,7 +5,6 @@ import { HttpLink } from "apollo-link-http";
 import { onError } from "apollo-link-error";
 import { toast } from "react-toastify";
 
-console.log(process.env);
 const cache = new InMemoryCache();
 
 const httpLink = new HttpLink({

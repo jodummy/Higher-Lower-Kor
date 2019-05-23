@@ -12,6 +12,7 @@ import {
   EmailIcon
 } from "react-share";
 import { media } from "src/config/_mixin";
+import ModalButton from "../../Components/ModalButton";
 
 import F1 from "../../img/grade/F1.gif";
 import F2 from "../../img/grade/F2.gif";
@@ -35,10 +36,7 @@ import A3 from "../../img/grade/A3.gif";
 import A4 from "../../img/grade/A4.gif";
 import S1 from "../../img/grade/S1.gif";
 import S2 from "../../img/grade/S2.gif";
-import { Mutation } from "react-apollo";
-import { CREATE_OPINION } from "./ResultQueries";
-import { Button, Modal, message as antMessage, Tooltip } from "antd";
-import TextArea from "antd/lib/input/TextArea";
+import { Tooltip } from "antd";
 
 interface IResultContainerProps {
   url: string;
@@ -168,11 +166,6 @@ class Result extends React.Component<IProps, any> {
   constructor(props: IProps) {
     super(props);
     const { score } = this.props.location.state;
-    this.state = {
-      loading: false,
-      visible: false,
-      text: ""
-    };
     if (score <= 0) {
       url =
         Math.random() > 0.5
@@ -228,34 +221,8 @@ class Result extends React.Component<IProps, any> {
     }
   }
 
-  success = () => {
-    antMessage.success("🙏🏻 메시지가 개발자에게 전달되었습니다. 감사합니다. 🙏🏻");
-  };
-
-  showModal = () => {
-    this.setState({
-      visible: true
-    });
-  };
-
-  handleOk = () => {
-    this.setState({ loading: true });
-    setTimeout(() => {
-      this.setState({ loading: false, visible: false });
-    }, 3000);
-  };
-
-  handleCancel = () => {
-    this.setState({ visible: false });
-  };
-
-  handleOnChange = (e: any) => {
-    this.setState({ text: e.target.value });
-  };
-
   public render() {
     const { score, length } = this.props.location.state;
-    const { visible, loading, text } = this.state;
     return (
       <ResultContainer url={url}>
         <Signature
@@ -272,17 +239,6 @@ class Result extends React.Component<IProps, any> {
         <Score>{score}점</Score>
         <ResultSubtitle>{message}</ResultSubtitle>
         <Info style={{ marginBottom: 15 }}>* 유저 평균 7.2점 *</Info>
-        {/* <Info style={{ marginBottom: 15, opacity: 1 }}>
-          🤔 뭔가 사야할 게 생각나셨나요? 🤔
-        </Info>
-        <div style={{ marginBottom: 15 }}>
-          <iframe
-            src="//partners.coupang.com/cdn/redirect?url=customjs%2Faffiliate%2Fsearch-bar%2F0.0.4%2Ffavicon-02.html%3FtrackingCode%3DAF5897602"
-            width="250px"
-            height="36"
-            scrolling="no"
-          />
-        </div> */}
         <SocialContainer>
           <FacebookShareButton url={"https://higherlowerkorea.com"}>
             <FacebookIcon
@@ -313,21 +269,6 @@ class Result extends React.Component<IProps, any> {
             />
           </EmailShareButton>
         </SocialContainer>
-        {/* <ins
-          className="kakao_ad_area"
-          style={{ display: "none" }}
-          data-ad-unit="DAN-t4z03kw98i8z"
-          data-ad-width="250"
-          data-ad-height="250"
-        /> */}
-
-        {/* <ins
-          className="kakao_ad_area"
-          style={{ display: "none" }}
-          data-ad-unit="DAN-1hbd7dqdba7ab"
-          data-ad-width="300"
-          data-ad-height="250"
-        /> */}
         <ButtonContainer>
           <Link to={"/"}>
             <RetryButton>메인</RetryButton>
@@ -345,50 +286,7 @@ class Result extends React.Component<IProps, any> {
             </Link>
           </Tooltip>
         </ButtonContainer>
-        <Mutation mutation={CREATE_OPINION}>
-          {createOpinion => {
-            return (
-              <div>
-                <Button type="primary" onClick={this.showModal}>
-                  👉 여러분이 제안해주신 키워드가 게임에 반영됩니다. 👈
-                </Button>
-                <Modal
-                  visible={visible}
-                  title={<div style={{ fontWeight: "bolder" }}>의견</div>}
-                  onOk={this.handleOk}
-                  onCancel={this.handleCancel}
-                  width={500}
-                  footer={[
-                    <Button key="back" onClick={this.handleCancel}>
-                      돌아가기
-                    </Button>,
-                    <Button
-                      key="submit"
-                      type="primary"
-                      loading={loading}
-                      onClick={() => {
-                        this.setState({ loading: true });
-                        setTimeout(() => {
-                          this.setState({ loading: false, visible: false });
-                          createOpinion({ variables: { text } });
-                          this.success();
-                        }, 3000);
-                      }}
-                    >
-                      보내기
-                    </Button>
-                  ]}
-                >
-                  <TextArea
-                    placeholder={`광고 클릭시, 키워드 반영이 빨라집니다!`}
-                    value={text}
-                    onChange={this.handleOnChange}
-                  />
-                </Modal>
-              </div>
-            );
-          }}
-        </Mutation>
+        <ModalButton />
       </ResultContainer>
     );
   }

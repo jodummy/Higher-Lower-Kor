@@ -54,7 +54,7 @@ class Game extends React.PureComponent<IProps, IState> {
     };
   }
 
-  public componentWillMount = () => {
+  componentWillMount = () => {
     this.setState({
       highScore: localStorage.getItem("higherlowerkorhighscore")
         ? parseInt(localStorage.getItem("higherlowerkorhighscore")!, 10)
@@ -70,8 +70,6 @@ class Game extends React.PureComponent<IProps, IState> {
       answerClick,
       answerResult,
       currentScore
-      // keywords,
-      // keywordData
     } = this.state;
     return (
       <Query
@@ -82,7 +80,6 @@ class Game extends React.PureComponent<IProps, IState> {
         {({ loading, error, data }: any) => {
           if (loading) return <GameLoading />;
           if (error) {
-            console.log(error.message);
             return <GameError />;
           }
           const keywordData = data.keywords;
@@ -115,7 +112,7 @@ class Game extends React.PureComponent<IProps, IState> {
     );
   }
 
-  public loadKeywords = () => {
+  loadKeywords = () => {
     setTimeout(() => {
       this.setState({
         index: this.state.index + 1,
@@ -126,7 +123,7 @@ class Game extends React.PureComponent<IProps, IState> {
     }, 1000);
   };
 
-  public onClickAnswer = (right: boolean, createResult: any) => {
+  onClickAnswer = (right: boolean, createResult: any) => {
     this.setState({
       answerClick: true,
       state: "CLICKANSWER"
@@ -144,8 +141,8 @@ class Game extends React.PureComponent<IProps, IState> {
     }
   };
 
-  public rightAnswer = () => {
-    // correct.play();
+  /* correct answer */
+  rightAnswer = () => {
     setTimeout(() => {
       this.setState({
         state: "SLIDEMOVE",
@@ -155,8 +152,8 @@ class Game extends React.PureComponent<IProps, IState> {
     }, 1000);
   };
 
-  public wrongAnswer = (createResult: any) => {
-    // wrong.play();
+  /* wrong answer */
+  wrongAnswer = (createResult: any) => {
     setTimeout(() => {
       localStorage.getItem("higherlowerkorhighscore")
         ? parseInt(localStorage.getItem("higherlowerkorhighscore")!, 10) <
@@ -181,7 +178,7 @@ class Game extends React.PureComponent<IProps, IState> {
     }, 1000);
   };
 
-  public shuffle = (a: any) => {
+  shuffle = (a: any) => {
     for (let i = a.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [a[i], a[j]] = [a[j], a[i]];
