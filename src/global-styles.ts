@@ -24,7 +24,7 @@ ${reset};
   }
   @media (max-width: 767px){
   .ant-modal {
-    width: 300px!important;
-    margin: 10px;
+    width: 100% !important;
+    margin: 2rem;
   }}
 `;

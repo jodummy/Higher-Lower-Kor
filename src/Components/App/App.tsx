@@ -14,14 +14,14 @@ import { media } from "src/config/_mixin";
 
 const AppContainer = styled.div`
   position: absolute;
-  top: 90px;
-  bottom: 90px;
+  top: 0;
+  bottom: 0;
   right: 0;
   left: 0;
   overflow: hidden;
   ${media.phone`
     top: 50px;
-  bottom:50px;
+    bottom:50px;
   `}
 `;
 

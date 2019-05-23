@@ -10,7 +10,7 @@ const AdvertisementContainer = styled<IAdvertisementContainerProps, any>("div")`
   position: absolute;
   top: ${props => (props.position === "TOP" ? "0px" : null)};
   bottom: ${props => (props.position === "BOTTOM" ? "0px" : null)};
-  height: 90px;
+  height: 0px;
   width: 100%;
   background-color: transparent;
   z-index: 10;
@@ -52,7 +52,7 @@ class Advertisement extends React.Component<IProps, IState> {
         {position === "TOP" ? (
           env === "PC" ? (
             <React.Fragment>
-              <ins
+              {/* <ins
                 className="kakao_ad_area"
                 style={{ display: "none" }}
                 data-ad-unit="DAN-1jeqht4x568h2"
@@ -65,7 +65,7 @@ class Advertisement extends React.Component<IProps, IState> {
                 data-ad-unit="DAN-uv5u23x5aele"
                 data-ad-width="728"
                 data-ad-height="90"
-              />
+              /> */}
             </React.Fragment>
           ) : (
             <ins
@@ -78,7 +78,7 @@ class Advertisement extends React.Component<IProps, IState> {
           )
         ) : env === "PC" ? (
           <React.Fragment>
-            <ins
+            {/* <ins
               className="kakao_ad_area"
               style={{ display: "none" }}
               data-ad-unit="DAN-1jecnptzfn589"
@@ -91,7 +91,7 @@ class Advertisement extends React.Component<IProps, IState> {
               data-ad-unit="DAN-t4ct78evdliw"
               data-ad-width="728"
               data-ad-height="90"
-            />
+            /> */}
           </React.Fragment>
         ) : (
           <ins
