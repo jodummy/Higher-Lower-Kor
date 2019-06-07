@@ -6,6 +6,8 @@
     "apollo-boost": "^0.1.20",
     "gh-pages": "^2.0.1",
     "graphql": "^14.0.2",
+    "handlebars": "^4.1.2",
+    "js-yaml": "^3.13.1",
     "merge": "^1.2.1",
     "react": "^16.6.0",
     "react-adsense": "^0.0.6",
