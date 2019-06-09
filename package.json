@@ -9,6 +9,7 @@
     "handlebars": "^4.1.2",
     "js-yaml": "^3.13.1",
     "merge": "^1.2.1",
+    "querystringify": "^2.0.0",
     "react": "^16.6.0",
     "react-adsense": "^0.0.6",
     "react-animated-number": "^0.4.4",
